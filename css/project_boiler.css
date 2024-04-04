@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --discord_sun: none;
+    --discord_moon: block;
+    --discord_theme_change: #000;
+    --discord_moon_hover: #000000;
+    --discord_hover: #0046f7;
+    --discord_bg: #e4e4e4;
+    --discord_box: #ffffff;
+    --discord_text: #000000;
+    --discord_time: #292929;
+    --discord_title: #ffbb00;
+    --discord_transition: 0.5s;
+    
+    --navigation_tab: block;
+    --navigation_cross: none;
+    --navigation_width: 0;
+    --navigation_bar_width: 10rem;
+    --navigation_z: 1;
+}
+
+
+/* --------------------- Navigation bar ---------------------  */
+.navigation{
+    z-index: var(--navigation_z);
+    display: flex;
+    white-space: nowrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--navigation_bar_width);
+}
+
+.navigation .fa-solid{
+    padding: 10px;
+    font-size: 40px;
+    cursor: pointer;
+    color: #000;
+}
+
+.navigation .fa-bars{
+    color: var(--discord_theme_change);
+    transition: var(--discord_transition);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.navigation .fa-xmark{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.nav-links{
+    position: relative;
+    z-index: 2;
+    width: var(--navigation_width);
+    height: 100vh;
+    transition: 0.2s;
+    background: rgb(150, 239, 230)
+}
+
+.nav-links ul{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4rem 4rem 0 0;
+}
+
+.nav-links ul li{
+    list-style: none;
+    padding: 0.5rem 0;
+}
+
+.nav-links ul li a{
+    text-decoration: none;
+    color: #000000;
+}
+
+/* -------------- Search Bar ------------*/
+/* 
+#searchInput{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    padding: 0.5rem;
+    margin: 0.7rem 4rem 0 0;
+    border-radius: 0.7rem;
+    border-color:#3a3a3a;
+    border-style: solid;
+    border-width: 0.1rem;
+    outline: none;
+    
+    font-size: 1rem;
+    font-weight: 600;
+    color: #3a3a3a;
+    background: #fff;
+}
+
+#searchInput::placeholder{
+    color: #3a3a3a;
+} */
+
+/* -------------  Theme change ------------------*/
+
+.topBAR .fa-regular{
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.topBAR .fa-sun{
+    color: var(--discord_theme_change);
+    display: var(--discord_sun);
+    z-index: 2;
+}
+
+.topBAR .fa-moon{
+    color: var(--discord_moon_hover);
+    display: var(--discord_moon);
+    z-index: 2;
+}
+
+.topBAR .fa-regular:hover{
+    color: var(--discord_hover);
+    transition: var(--discord_transition);
+}
+
+/* -------------- Light/dark themes ---------------*/

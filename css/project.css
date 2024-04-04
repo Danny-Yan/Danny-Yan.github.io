@@ -1,0 +1,432 @@
+*{
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+section{
+    scroll-snap-align: start;
+}
+
+
+:root {
+    --discord_sun: none;
+    --discord_moon: block;
+    --discord_theme_change: #000;
+    --discord_moon_hover: #000000;
+    --discord_hover: #0046f7;
+    --discord_bg: #e4e4e4;
+    --discord_box: #ffffff;
+    --discord_text: #000000;
+    --discord_time: #292929;
+    --discord_title: #ffbb00;
+    --discord_transition: 0.5s;
+    --desmos_bg: #353535;
+
+    --discord_box_scale: 3;
+    --discord_column_width: calc(100%/var(--discord_box_scale));
+    --discord_font_body: calc(4vw/var(--discord_box_scale));
+    --discord_font_sub: calc(2.4vw/var(--discord_box_scale));
+    --discord_corners: calc(4vw/var(--discord_box_scale));
+    --discord_column_spacing: calc(2vw/var(--discord_box_scale));
+}
+
+
+
+.projectBG{
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.projectBG h1{
+    z-index: 2;
+    font-size: 10vw;
+    color: #353535;
+    font-weight: 600;
+    text-align: center;
+}
+
+.spacerProject{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* --------------------- Discord voice bot intergration ---------------------  */
+.discordPage{
+    position: relative;
+}
+
+.discord{
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    transform: translateZ(0px);
+}
+
+.discordBackground{
+    width: 100%;
+    margin: auto;
+    background-color: var(--discord_bg);
+    transition: var(--discord_transition);
+}
+
+.discordMessages{
+    height: 140vh;
+    overflow: hidden;
+    display: flex;  
+    flex-wrap: wrap;    
+    width: 100%;
+    margin: auto; 
+    
+    transform: translateY(-20vh);
+    rotate: 10deg;
+    /* filter: blur(2px); */
+}
+
+.discordColumn{
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: var(--discord_column_width);
+    padding: var(--discord_column_spacing);
+    transition: var(--discord_transition);
+}
+
+.discordBox{
+    width: 100%;
+    padding: 3%;
+    margin-bottom: 3%;
+    align-self: start;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    text-align: left;
+    border-radius: var(--discord_corners);
+    background-color: var(--discord_box);
+    transition: var(--discord_transition);
+}
+
+.discordText{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    font: "Open Sans", sans-serif;
+    transition: var(--discord_transition);
+}
+
+.discordImage{
+    width: 25%;
+    padding-left: 0.5vw;
+    padding-right: 1.5vw;
+    display: flex;
+    transition: var(--discord_transition);
+}
+
+
+.discordImage img{
+    width: 100%;
+    height: 100%;
+    clip-path: circle(50%);
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-right: 25%;
+}
+
+.discordText h5{
+    font-size: var(--discord_font_body);
+    color: var(--discord_title);
+    padding-bottom: 0.5em;
+    padding-right: 0.5em;
+    transition: var(--discord_transition);
+}
+
+.discordText h1{
+    flex: 1;
+    width: 20%;
+    font-weight: 300;
+    align-self: center;
+    font-size: var(--discord_font_sub);
+    color: var(--discord_time);
+    padding-bottom: 0.5em;
+    transition: var(--discord_transition);
+    white-space: nowrap;
+}
+
+.discordText h2{
+    width: 100%;
+    text-align: start;
+    font-size: var(--discord_font_body);
+    font-weight: 350;
+    color: var(--discord_text);
+    padding: 0 0 0.5em 0;
+    line-height: 1.2em;
+    transition: var(--discord_transition);
+}
+
+/* --------------------- Marquee scrolling animation ---------------------  */
+
+.discordColumn:nth-child(even) .discord_section {            
+    animation: loopTextA 10s infinite linear;        
+}
+
+@keyframes loopTextA {
+    from {transform: translateY(-100%)}
+    to {transform: translateY(0)}
+}
+
+.discordColumn:nth-child(odd) .discord_section {            
+    animation: loopTextB 10s infinite linear;        
+}
+
+@keyframes loopTextB {
+    from {transform: translateY(0)}
+    to {transform: translateY(-100%)}
+}
+
+.discordPage{
+    overflow: hidden;
+    position: relative;
+    display: flex;
+}
+
+.discordfrontPage{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    overflow: hidden;
+}
+
+/* -------------- Big Project Text ---------------------------- */
+.discord_project_title{
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+
+    white-space: nowrap;
+    align-self: center;
+    text-align: left;
+    transition: 0.2s;
+    font-size: 12vw;
+    font-weight: 800;
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    0   -1px 0 #000,
+    1px -1px 0 #000,
+    1px  0   0 #000,
+    1px  1px 0 #000,
+    0    1px 0 #000,
+    -1px  1px 0 #000,
+    -1px  0   0 #000;
+    filter: drop-shadow(1vw 1vw 0 rgb(74, 74, 74)); /* --- white, 74 -- */
+
+}
+
+
+/* -------------- Project button ------------*/
+
+.discord_project_bt{
+    margin: 0 0 5rem 10rem;
+    align-self: flex-end;
+    transform: translateZ(-1px);
+    z-index: 2;
+    text-align: center;
+
+    background: #809ce2;
+    padding: 2vw;
+    border-radius: 2vw;
+    transition: 0.2s;
+    /* filter: drop-shadow(0 0 0.75rem rgb(131, 131, 131)); */
+}
+
+.discord_project_bt p{
+    font-size: 3vw;
+    font-weight: 800;
+}
+
+.discord_project_bt a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.discord_project_bt:hover{
+    cursor: pointer;
+    background: #6080d1;
+}
+
+
+@media (max-width: 1100px){
+    .discord_project_title{
+        width: 100%;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 2rem;
+    }
+
+    .discord_project_bt{
+        font-size: 6vw;
+        padding: 3vw;
+        border-radius: 3vw;
+        margin: auto;
+    }
+}
+
+@media (max-width: 900px){
+    .discordImage{
+        padding-left: 1vw;
+        padding-right: 4vw;
+    }
+    .discordMessages{
+        --discord_box_scale: 1;
+        --discord_column_width: calc(100%/var(--discord_box_scale));
+        --discord_font_body: calc(4vw/var(--discord_box_scale));
+        --discord_font_sub: calc(2.4vw/var(--discord_box_scale));
+        --discord_corners: calc(4vw/var(--discord_box_scale));
+        --discord_column_spacing: calc(2vw/var(--discord_box_scale));
+        height: 100vh;
+        transform: translateY(0vh);
+        rotate: 0deg;
+    }
+}
+
+
+/* ----------------- Background tint ------------*/
+.discord_tintedBG{
+    /* background: linear-gradient(#00c5c5, #b8b8b8, #0014c5); */
+    background: linear-gradient(#fff, #000);
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+
+.scroll_intermediate{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    transition: 0.5s;
+}
+
+
+
+
+
+/* -------------- FILLER PAGE --------------- */
+
+.fillerPage{
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    transition: var(--discord_transition);
+
+    background:
+        linear-gradient(-90deg, rgb(113, 113, 113, 0.5) 3px, transparent 3px),
+        linear-gradient(rgb(113, 113, 113, 0.5) 3px, transparent 3px),
+        linear-gradient(-90deg, rgb(213, 213, 213, 0.5) 2px, transparent 2px),
+        linear-gradient(rgb(213, 213, 213, 0.5) 2px, transparent 2px),
+        var(--discord_box);
+    background-size:
+        200px 200px,
+        200px 200px,
+        40px 40px,
+        40px 40px;
+}
+
+.paradesmos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+#svgGraphdesmos{ /*Goofy ah ah bg not being a bg -- I got no clue*/
+    scale: 2;
+    overflow: hidden;
+    width: 1200px;
+    height: 800px;
+}
+
+#svgLogodesmos{
+    position: absolute;
+    top: 0;
+    right: 0;
+    scale: 2;
+    transform: translate(-35%, 70%);
+}
+
+.paradesmos{
+    width: 100%;
+    height: 100vh;
+}
+
+.pageInfo{
+    transform: translateY(100%);
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 20rem 4rem 0;
+    padding: 2vw;
+    border-radius: 2vw;
+    background: #be5454;
+    font-size: 3vw;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 5s;
+}
+
+.pageInfo a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.pageInfo:hover{
+    background: #833939;
+}
+
+.showpath{
+    transform: translateY(-15%);
+    transition-timing-function: cubic-bezier(.01,1.65,.33,.71);
+}
+
+@media (max-width: 1100px){
+    #svgLogodesmos{
+        scale: 1.5;
+    }
+}
+
+@media (max-width: 700px){
+    #svgLogodesmos{
+        scale: 1;
+        transform: translate(-30%, 120%);
+    }
+}

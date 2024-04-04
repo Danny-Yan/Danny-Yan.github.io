@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "css/svg_converter.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/path-data-polyfill@1.0.3/path-data-polyfill.js"></script>
+    <script src="https://www.desmos.com/api/v1.8/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+    <script src = "js/svg_converter_points.js"></script>
+</head>
+<body>
+    <div id="calculator"></div>
+    <script>
+        var elt = document.getElementById('calculator');
+        var calculator = Desmos.GraphingCalculator(elt);
+    </script>
+    <object type="image/svg+xml" data="image/svg/desmos_svg/desmos-graph-bounce.svg" class = "svgCLASS"></object>
+</body>
+</html>

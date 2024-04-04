@@ -1,0 +1,480 @@
+*{
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --discord_sun: none;
+    --discord_moon: block;
+    --discord_theme_change: #000;
+    --discord_moon_hover: #000000;
+    --discord_hover: #0046f7;
+    --discord_bg: #e4e4e4;
+    --discord_box: #ffffff;
+    --discord_text: #000000;
+    --discord_time: #292929;
+    --discord_title: #ffbb00;
+    --discord_transition: 0.5s;
+
+    
+    --discord_box_scale: 1;
+
+    --discord_column_size: 1.9; /* 4 = 100%*/
+    --discord_column_width: calc(100%/var(--discord_box_scale) * var(--discord_column_size));
+    --discord_font_body: calc(1vw/var(--discord_box_scale)* var(--discord_column_size));
+    --discord_font_sub: calc(0.6vw/var(--discord_box_scale)* var(--discord_column_size));
+    --discord_corners: calc(1vw/var(--discord_box_scale)* var(--discord_column_size));
+    --discord_column_spacing: calc(0.5vw/var(--discord_box_scale)* var(--discord_column_size));
+}
+
+.discordcontainer{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.discord{
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    transform: translateZ(0px);
+}
+
+.discordBackground{
+    width: 100%;
+    background-color: var(--discord_bg);
+    transition: var(--discord_transition);
+}
+
+.discordMessages{
+    height: 140vh;
+    overflow: hidden;
+    display: flex;
+    margin-left: 5vw;
+    flex-wrap: wrap;    
+    width: calc(25% * var(--discord_column_size));
+    
+    transform: translateY(-20vh);
+    rotate: 10deg;
+}
+
+.discordColumn{
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: var(--discord_column_width);
+    padding: var(--discord_column_spacing);
+    transition: var(--discord_transition);
+}
+
+.discordBox{
+    width: 100%;
+    padding: 3%;
+    margin-bottom: 3%;
+    align-self: start;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    text-align: left;
+    border-radius: var(--discord_corners);
+    background-color: var(--discord_box);
+    transition: var(--discord_transition);
+}
+
+.discordText{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    font: "Open Sans", sans-serif;
+    transition: var(--discord_transition);
+}
+
+.discordImage{
+    width: 25%;
+    padding-left: 0.5vw;
+    padding-right: 1.5vw;
+    display: flex;
+    transition: var(--discord_transition);
+}
+
+
+.discordImage img{
+    width: 100%;
+    height: 100%;
+    clip-path: circle(50%);
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-right: 25%;
+}
+
+.discordText h5{
+    font-size: var(--discord_font_body);
+    color: var(--discord_title);
+    padding-bottom: 0.5em;
+    padding-right: 0.5em;
+    transition: var(--discord_transition);
+}
+
+.discordText h1{
+    flex: 1;
+    width: 20%;
+    font-weight: 300;
+    align-self: center;
+    font-size: var(--discord_font_sub);
+    color: var(--discord_time);
+    padding-bottom: 0.5em;
+    transition: var(--discord_transition);
+    white-space: nowrap;
+}
+
+.discordText h2{
+    width: 100%;
+    text-align: start;
+    font-size: var(--discord_font_body);
+    font-weight: 350;
+    color: var(--discord_text);
+    padding: 0 0 0.5em 0;
+    line-height: 1.2em;
+    transition: var(--discord_transition);
+}
+
+/* --------------------- Marquee scrolling animation ---------------------  */
+
+.discordColumn:nth-child(even) .discord_section {            
+    animation: loopTextA 10s infinite linear;        
+}
+
+@keyframes loopTextA {
+    from {transform: translateY(-100%)}
+    to {transform: translateY(0)}
+}
+
+.discordColumn:nth-child(odd) .discord_section {            
+    animation: loopTextB 10s infinite linear;        
+}
+
+@keyframes loopTextB {
+    from {transform: translateY(0)}
+    to {transform: translateY(-100%)}
+}
+
+.discordPage{
+    overflow: hidden;
+    position: relative;
+    display: flex;
+}
+
+.discordfrontPage{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    overflow: hidden;
+}
+
+/* .discord_tintedBG{
+    background: linear-gradient(#000000, #fff);
+    opacity: 0.2;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+} */
+
+/* -------------------------------------------------------- Title page ---------------------------------------------------------*/
+
+.Title{
+    position: relative;
+    height: 100vh;
+}
+
+.discordHeader{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    font-size: 10vw;
+    font-weight: 700;
+    color: var(--discord_text);
+    text-align: end;
+    white-space: nowrap;
+    padding: 10vh 2vw;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: end;
+    flex-direction: column;
+}
+
+.discordHeader h1{
+    font-size: 1em;
+}
+.discordHeader p{
+    font-size: 0.3em;
+}
+
+.discordLink{
+    z-index: 3;
+    padding: 2rem;
+    background-color: #4365ba;
+    border-radius: 2rem;
+    transition: 0.5s;
+}
+
+.discordLink a{
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    outline: none;
+    color: #ffffff;
+}
+
+.discordLink:hover{
+    background-color: #7b82af;
+}
+
+
+.discordInfoPage{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    text-align: center;
+    background: var(--discord_box);
+    color: var(--discord_text);
+}
+
+.infoBoxRight p{
+    overflow: hidden;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 1rem 0;
+}
+
+.pencilMarking{
+    position: relative;
+}
+
+.pencilMarking img{
+    filter: invert(35%) sepia(77%) saturate(4102%) hue-rotate(342deg) brightness(109%) contrast(94%);
+    position: absolute;
+    top: 0;
+    left: -15%;
+    object-fit: none;
+    object-position: 0 0;
+    scale: 2;
+}
+
+.infoboxDot{
+    padding: 6vh 0 0 1vw;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.infoboxDot h1{
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 2vh 0;
+}
+
+.infoboxDot ul{
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex: 1;
+    width: 100%;
+}
+
+.infoboxDot ul li{
+    width: 80%;
+    list-style: none;
+    padding: 1.5rem 3rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    transition: 0.5s ease-in;
+}
+
+.infoboxDot li:nth-child(1){background: #c75a5a}
+.infoboxDot li:nth-child(2){background: #65c75a}
+.infoboxDot li:nth-child(3){background: #5a72c7}
+.infoboxDot li:nth-child(4){background: #c7c35a}
+
+.infoboxDot ul li:hover{
+    background: rgb(196, 196, 196);
+    cursor: pointer;
+    width: 100%;
+    
+}
+
+.gifSpacer{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.infowithGif{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+@media (max-width: 940px) {
+    .discordHeader h1{
+        font-size: 1.3em;
+    }
+    .discordHeader p{
+        font-size: 0.5em;
+    }
+
+    .discordLink a{
+        font-size: 2rem;
+    }
+
+    .infowithGif{
+        flex-wrap: wrap;
+    }
+
+    .infoboxDot ul li{
+        font-size: 1.5rem;
+    }
+}
+
+
+/* -------------------- GUILD connections ---------------------- :( */
+
+.guild_connect{
+    width: 100%;
+    overflow: hidden;
+    padding: 10vh 0;
+    background: var(--discord_box);
+    color: var(--discord_text);
+}
+
+.guildBackground{
+    overflow: hidden;
+    width: 100%;
+    height: 20vh;
+    margin: auto;
+    background-color: rgba(193, 193, 193, 0.551);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.guildBackground h1{
+    line-height: 8vh;
+    font-weight: 500;
+}
+
+/* .guildMessages{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;  
+    flex-wrap: wrap;    
+    width: 100%;
+    margin: auto;
+}
+
+.guildColumn{
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: var(--discord_column_width);
+    padding: var(--discord_column_spacing);
+    transition: var(--discord_transition);
+}
+
+.guildBox{
+    width: 100%;
+    padding: 3%;
+    margin-bottom: 3%;
+    align-self: start;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    text-align: left;
+    border-radius: var(--discord_corners);
+    background-color: var(--discord_box);
+    transition: var(--discord_transition);
+}
+
+.guildText{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    font: "Open Sans", sans-serif;
+    transition: var(--discord_transition);
+}
+
+.guildText h5{
+    font-size: var(--discord_font_body);
+    color: var(--discord_title);
+    padding-bottom: 0.5em;
+    padding-right: 0.5em;
+    transition: var(--discord_transition);
+}
+
+.guildText h1{
+    flex: 1;
+    width: 20%;
+    font-weight: 300;
+    align-self: center;
+    font-size: var(--discord_font_sub);
+    color: var(--discord_time);
+    padding-bottom: 0.5em;
+    transition: var(--discord_transition);
+    white-space: nowrap;
+}
+
+.guildText h2{
+    width: 100%;
+    text-align: start;
+    font-size: var(--discord_font_body);
+    font-weight: 350;
+    color: var(--discord_text);
+    padding: 0 0 0.5em 0;
+    line-height: 1.2em;
+    transition: var(--discord_transition);
+} */
+
+.discordQuote{
+    background: var(--discord_box);
+    color: var(--discord_text);
+}
+
+
+
+.inspQuote{
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

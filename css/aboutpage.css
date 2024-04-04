@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+
+
+    /*Disable horizontal scrolling*/
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+:root {
+    --discord_sun: none;
+    --discord_moon: block;
+    --discord_theme_change: #000;
+    --discord_moon_hover: #000000;
+    --discord_hover: #0046f7;
+    --discord_bg: #e4e4e4;
+    --discord_box: #ffffff;
+    --discord_text: #000000;
+    --discord_time: #292929;
+    --discord_title: #ffbb00;
+    --discord_transition: 0.5s;
+}
+
+/* -------------- Title page ---------------*/
+.title{
+    width: 100%;
+    height: 50vh;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.abouttitle h1{
+    font-size: 5vw;
+}
+
+.aboutnotes p{
+    font-size: 0.5vw;
+}
