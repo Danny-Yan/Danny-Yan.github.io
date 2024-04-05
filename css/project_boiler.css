@@ -66,7 +66,7 @@
     width: var(--navigation_width);
     height: 100vh;
     transition: 0.2s;
-    background: rgb(150, 239, 230)
+    background: #FF9F1C;
 }
 
 .nav-links ul{
@@ -87,6 +87,19 @@
 .nav-links ul li a{
     text-decoration: none;
     color: #000000;
+}
+
+.nav-links ul li::after{ /*Child element of "...ul li"*/
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: #FDFFFC;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+    width: 100%;
 }
 
 /* -------------- Search Bar ------------*/

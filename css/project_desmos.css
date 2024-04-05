@@ -30,6 +30,7 @@
     white-space: nowrap;
     text-align: center; 
     color: var(--discord_time);
+    transition: var(--discord_transition);
 }
 
 
@@ -52,6 +53,7 @@
         200px 200px,
         40px 40px,
         40px 40px;
+    transition: var(--discord_transition);
 }
 
 .desmosTitle{

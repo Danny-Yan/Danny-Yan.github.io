@@ -12,20 +12,35 @@
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" >
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://web3forms.com/client/script.js" async defer></script>
         <script src = "js/project.js"></script>
     </head>
 <body>
     <nav class = "navbar"></nav>
-
     <section class = "title">
         <div class = "abouttitle">
             <h1>ABOUT</h1>
         </div>
 
         <div class = "aboutnotes">
-            <p>hi</p>
+            <h1>Hi!</h1>
+            <p><br>I'm Danny yan<br>A software engineering student<br>from Melbourne, Australia</p>
         </div>
+    
+        </section>
+    <section class = "contactForm">
+        <h1>Contact</h1>
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="c7b512ee-adf0-48ce-87b7-f79bbc1c9366">
 
-    </section>
+            <input type="text" name="name" placeholder="Your name" class = "inputName" required>
+            <input type="email" name="email" placeholder="Your email" class = "inputEmail" required>
+            <textarea name="message" placeholder = "A message .." class = "inputMessage" required></textarea>
+        
+            <!-- hCaptcha Spam Protection -->
+            <div class="h-captcha" data-captcha="true"></div>
+            <button type="submit">Submit Form</button>
+        </form>
+    </section>  
 </body>
 </html>
