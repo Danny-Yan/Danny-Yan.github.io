@@ -1,20 +1,22 @@
 $(window).on("load", function () {
     let docContent = document.getElementById('svgID');
     const svglm = docContent.querySelectorAll('path');
-    console.log(svglm);
+
     let totalindex = 0;
     svglm.forEach((pathsegment) => {
         let data = pathsegment.getPathData();
-        var fillquant = pathsegment.getAttribute('fill');
+        var fillquant = getFillStyle(pathsegment);
+        console.log(fillquant);
         // var fillOpacity = pathsegment.getAttribute('fill-opacity');
-        var svgFILLX = [];
-        var svgFILLY = [];
+        let svgFILLX = [];
+        let svgFILLY = [];
         let x1 = 0;
         let y1 = 0;
         let hx = 0;
         let hy = 0;
         let z1 = 0;
         let z2 = 0;
+
         data.forEach((segment) => {
             totalindex++;
             var key = segment.type
@@ -55,8 +57,9 @@ $(window).on("load", function () {
                     svgFILLX.push(x1);
                     svgFILLY.push(-y1);
 
-                    svgFILLX.push(Cbezier(0.5, x1, x2, x3, x4, y1, y2, y3, y4)[0]);
-                    svgFILLY.push(Cbezier(0.5, x1, x2, x3, x4, y1, y2, y3, y4)[1]);
+                    var result = Cbezier_preCalc(x1, x2, x3, x4, y1, y2, y3, y4);
+                    svgFILLX.push(result[0]);
+                    svgFILLY.push(result[1]);
 
                     x1 = x4;
                     y1 = y4;
@@ -93,8 +96,9 @@ $(window).on("load", function () {
                     svgFILLX.push(x1);
                     svgFILLY.push(-y1);
 
-                    svgFILLX.push(Qbezier(0.5, x1, x2, x3, y1, y2, y3)[0]);
-                    svgFILLY.push(Qbezier(0.5, x1, x2, x3, y1, y2, y3)[1]);
+                    var result = Qbezier_preCalc(x1, x2, x3, y1, y2, y3);
+                    svgFILLX.push(result[0]);
+                    svgFILLY.push(result[1]);
 
                     x1 = x3;
                     y1 = y3;
@@ -153,16 +157,32 @@ $(window).on("load", function () {
                 ]
             });
 
-            calculator.setExpression({id: `polygon${totalindex}`, latex: `\\polygon(x_{${totalindex}}, y_{${totalindex}})`, color: fillquant, fill: true, lines: false});
+            calculator.setExpression({id: `polygon${totalindex}`, latex: `\\polygon(x_{${totalindex}}, y_{${totalindex}})`, color: fillquant, fill: true, fillOpacity: 1, lines: false});
         });
 });
 
 
-const Cbezier = (t, x1, x2, x3, x4, y1, y2, y3, y4) => {
+function Cbezier(t, x1, x2, x3, x4, y1, y2, y3, y4){
     return [(1-t)**3*x1 + 3*(1-t)**2*t*x2 + 3*(1-t)*t**2*x3 + t**3*x4, (1-t)**3*(-y1) + 3*(1-t)**2*t*(-y2) + 3*(1-t)*t**2*(-y3) + t**3*(-y4)];
 }
-const Qbezier = (t, x1, x2, x3, y1, y2, y3) => {
+function Qbezier(t, x1, x2, x3, y1, y2, y3){
     return [(1-t)**2*x1 + 2*t*(1-t)*x2 + t**2*x3, (1-t)**2*(-y1) + 2*t*(1-t)*(-y2) + t**2*(-y3)];
+}
+
+function Cbezier_preCalc(x1, x2, x3, x4, y1, y2, y3, y4){
+    return [0.125 * (x1 + 3*x2 + 3*x3 + x4), -0.125 * (y1 + 3*y2 + 3*y3 + y4)];
+}
+
+function Qbezier_preCalc(x1, x2, x3, y1, y2, y3){
+    return [0.25 * (x1 + 2*x2 + x3), -0.25 * (y1 + 2*y2 + y3)];
+}
+
+
+function getFillStyle(pathsegment){
+    var fillquant = pathsegment.style.fill;
+    return fillquant;
+    // var fillquant = pathsegment.getAttribute('fill');
+    // var fillOpacity = pathsegment.getAttribute('fill-opacity');
 }
 
 
