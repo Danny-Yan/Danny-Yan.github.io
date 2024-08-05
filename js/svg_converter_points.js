@@ -6,7 +6,7 @@ $(window).on("load", function () {
     svglm.forEach((pathsegment) => {
         let data = pathsegment.getPathData();
         var fillquant = getFillStyle(pathsegment);
-        console.log(fillquant);
+        // console.log(fillquant);
         // var fillOpacity = pathsegment.getAttribute('fill-opacity');
         let svgFILLX = [];
         let svgFILLY = [];
@@ -150,14 +150,14 @@ $(window).on("load", function () {
                 {
                     latex: `y_{${totalindex}}`,
                     values: svgFILLY,
-                    lines: false,
-                    points: false,
-                    color: fillquant
+                    color: fillquant,
+                    hidden: true
                 }
-                ]
+                ],
+                secret: true
             });
 
-            calculator.setExpression({id: `polygon${totalindex}`, latex: `\\polygon(x_{${totalindex}}, y_{${totalindex}})`, color: fillquant, fill: true, fillOpacity: 1, lines: false});
+            calculator.setExpression({id: `polygon${totalindex}`, latex: `\\polygon(x_{${totalindex}}, y_{${totalindex}})`, color: fillquant, fill: true, fillOpacity: 1, lines: false, secret: true});
         });
 });
 
@@ -180,6 +180,10 @@ function Qbezier_preCalc(x1, x2, x3, y1, y2, y3){
 
 function getFillStyle(pathsegment){
     var fillquant = pathsegment.style.fill;
+    if (!fillquant) {
+        fillquant = pathsegment.getAttribute('fill');
+    }
+
     return fillquant;
     // var fillquant = pathsegment.getAttribute('fill');
     // var fillOpacity = pathsegment.getAttribute('fill-opacity');

@@ -6,10 +6,8 @@
     <title>Document</title>
     <link rel = "stylesheet" href = "css/svg_converter.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/path-data-polyfill@1.0.6/path-data-polyfill.min.js"></script>
-    <script src="/node_modules/@iconfu/svg-inject/src/svg-inject.js"></script>
     <script src="https://www.desmos.com/api/v1.9/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
-    <script src = "js/svg_converter_points.js"></script>
+    <script src = "js/raster_converter.js"></script>
 </head>
 <body>
     <div id="calculator"></div>
@@ -17,11 +15,5 @@
         var elt = document.getElementById('calculator');
         var calculator = Desmos.GraphingCalculator(elt);
     </script>
-    
-    <div id = "svgID">
-        <!-- Add svg link here -->
-        <img src="image/svg/outputs/Anderson_Bunny (2).svg" onload="SVGInject(this)" />
-    </div>
-    
 </body>
 </html>
