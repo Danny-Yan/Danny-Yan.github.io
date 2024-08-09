@@ -8,12 +8,15 @@ $(window).on("load", function () {
     context.drawImage(image, 0, 0);
     var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
 
+    // Pixel size
     var h = 1;
+    
+    // Looping through image data
     var rollIndex = 0;
     var totalindex = 0;
-
     var fillquant = [];
     for(const element of imageData.data){
+        // Skip alpha values
         if (rollIndex == 3) {
             rollIndex++;
             continue;
@@ -26,7 +29,7 @@ $(window).on("load", function () {
             
             calculator.setExpression({id: `polygon${totalindex}`, latex: `\\polygon((${x}, ${y}), (${x}, ${y} + ${h}), (${x} + ${h}, ${y} + ${h}), (${x} + ${h}, ${y}))`, color: fillString, fill: true, fillOpacity: 1, lines: false});
             totalindex++;
-            
+
             // Resetting
             fillquant = [];
             rollIndex = 0;
