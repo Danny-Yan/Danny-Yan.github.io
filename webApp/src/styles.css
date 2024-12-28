@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('../node_modules/font-awesome/css/font-awesome.min.css'); 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --discord_sun: none;
+    --discord_moon: block;
+    --discord_theme_change: #000;
+    --discord_moon_hover: #000000;
+    --discord_hover: #0046f7;
+    --discord_bg: #e4e4e4;
+    --discord_box: #ffffff;
+    --discord_text: #000000;
+    --discord_time: #353535;
+    --discord_title: #ffbb00;
+    --discord_transition: 0.5s;
+
+
+    --titleyellow: #FF9F1C;
+    --titlered: #E71D36;
+    --titleblue: #2EC4B6;
+    --titlewhite: #FDFFFC;
+    --titleblack: #011627;
+}
+
