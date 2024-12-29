@@ -1,0 +1,4 @@
+<div class="p-[10px] text-[40px] cursor-pointer">
+    <fa-icon [icon]="faSun" [ngClass]="dark_mode_toggle? 'block': 'hidden'" (click) = "lightmode()"></fa-icon>
+    <fa-icon [icon]="faMoon" [ngClass]="dark_mode_toggle? 'hidden': 'block'" (click) = "darkmode()"></fa-icon>
+</div>
