@@ -8,7 +8,7 @@ import { DesmosPageComponent } from './web-pages/desmos-page/desmos-page.compone
 
 export const routes: Routes = [
     { path: '', component: HomeComponent},
-    { path: 'project', component: ProjectPageComponent},
+    { path: 'projects', component: ProjectPageComponent},
     { path: 'about', component: AboutPageComponent},
     { path: 'discord', component: DiscordPageComponent},
     { path: 'desmos', component: DesmosPageComponent},

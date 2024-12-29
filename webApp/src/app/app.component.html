@@ -1,22 +1,27 @@
 <nav class = "topBAR">
-    <div class = "navigation z-10 flex whitespace-nowrap fixed top-0 left-0 w-40">
-        <i class="fa-solid fa-bars p-[10px] text-[40px] cursor-pointer text-black duration-500 fixed top-0 left-0" onclick="showmenu()"></i>
-        <div class = "nav-links relative z-20 w-40 h-screen duration-200 bg-[#FF9F1C]">
+    <div class = "navigation z-0 flex whitespace-nowrap fixed top-0 left-0 w-40">
+        <fa-icon [icon]="faBars" class = "p-[10px] text-[40px] cursor-pointer text-black duration-500 fixed top-0 left-0" (click)="showmenu()"></fa-icon>
+        <div class = "nav-links relative h-screen duration-200 bg-[#FF9F1C]" [ngClass]="[side_bar_val]">
             <ul class="flex flex-col justify-between absolute top-0 right-0 pt-16 pr-16">
-                <li class="list-none py-2"><a class="no-underline text-black" href = "index.html">HOME</a></li>
-                <li class="list-none py-2"><a class="no-underline text-black" href = "projects.html">PROJECTS</a></li>
-                <li class="list-none py-2"><a class="no-underline text-black" href = "aboutpage.html">ABOUT</a></li>
+                <li class="list-none py-2"><a class="no-underline text-black" routerLink = "/">HOME</a></li>
+                <li class="list-none py-2"><a class="no-underline text-black" routerLink = "/projects">PROJECTS</a></li>
+                <li class="list-none py-2"><a class="no-underline text-black" routerLink = "/about">ABOUT</a></li>
             </ul>
-            <i class="fa-solid fa-xmark p-[10px] text-[40px] cursor-pointer text-black absolute top-0 right-0" onclick="hidemenu()"></i>
+            <fa-icon [icon]="faXmark" class="p-[10px] text-[40px] cursor-pointer text-black absolute top-0 right-0" (click)="hidemenu()"></fa-icon>
         </div>   
     </div>
     <!-- <div id="search">
         <fa-icon [icon]d="searchInput" type="text" placeholder="Search">
     </div> -->
-    <i class="fa-regular fa-sun" onclick = "lightmode()"></i>
-    <i class="fa-regular fa-moon" onclick = "darkmode()"></i>
+    <div class="fixed top-0 right-0 p-[10px] text-[40px] cursor-pointer">
+        <fa-icon [icon]="faSun" [ngClass]="dark_mode_toggle? 'block': 'hidden'" (click) = "lightmode()"></fa-icon>
+        <fa-icon [icon]="faMoon" [ngClass]="dark_mode_toggle? 'hidden': 'block'" (click) = "darkmode()"></fa-icon>
+    </div>
 </nav>
 
-<router-outlet></router-outlet>
+<div class="w-screen flex justify-center">
+    <router-outlet></router-outlet>
+</div>
+
 <!-- Routed views go here -->
  <!-- Tool bar, night mode -->
