@@ -1,18 +1,25 @@
-<nav class = "topBAR">
-    <div class = "fixed top-0 left-0">
-        <app-sidebar-menu></app-sidebar-menu>
-    </div>
-    <!-- <div id="search">
-        <fa-icon [icon]d="searchInput" type="text" placeholder="Search">
-    </div> -->
-    <div class="fixed top-0 right-0">
-        <app-theme-toggle></app-theme-toggle>
-    </div>
-</nav>
+<section [ngClass]="isDarkMode ? 'dark': 'block'">
+    <nav class = "topBAR" *ngIf ="__URL != ''">
 
-<div class="w-screen flex justify-center">
-    <router-outlet></router-outlet>
-</div>
+        <!-- Side Bar -->
+        <div class = "fixed top-0 left-0">
+            <app-sidebar-menu></app-sidebar-menu>
+        </div>
+        <!-- <div id="search">
+            <fa-icon [icon]d="searchInput" type="text" placeholder="Search">
+        </div> -->
+
+        <!-- Dark Mode Toggle -->
+        <div class="fixed top-0 right-0">
+            <app-theme-toggle></app-theme-toggle>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="w-screen flex justify-center h-screen dark:bg-gray-300">
+        <router-outlet></router-outlet>
+    </div>
+</section>
 
 <!-- Routed views go here -->
  <!-- Tool bar, night mode -->

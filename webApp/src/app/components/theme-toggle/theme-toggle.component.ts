@@ -22,10 +22,10 @@ export class ThemeToggleComponent {
 
   lightmode(){
     this.dark_mode_toggle = false
-    this.themeService.setDarkMode(this.isDarkMode);
+    this.themeService.setDarkMode( this.dark_mode_toggle );
   }
   darkmode(){
     this.dark_mode_toggle = true
-    this.themeService.setDarkMode(this.isDarkMode);
+    this.themeService.setDarkMode( this.dark_mode_toggle );
   }
 }
