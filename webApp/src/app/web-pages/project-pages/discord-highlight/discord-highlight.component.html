@@ -14,11 +14,10 @@
 
                             <!-- Messages -->
                             @for(message of messages; track $index){
-                                @if($index % 3 == col_index){                            
+                                @if($index % message_len == col_index){                            
                                     <app-discord-message time = "{{message.date}}" name = "{{message.name}}" text="{{message.audioString}}" icon="{{message.avatar}}"></app-discord-message>
                                 }
                             }
-
                         </div>
                         }
                     </div>
@@ -30,11 +29,15 @@
     <div class = 'w-full h-full absolute top-0 left-0 z-0 bg-gradient-to-t from-black to-white opacity-50'></div>
 
     <div class="w-full h-screen absolute top-0 left-0 flex flex-wrap items-center overflow-hidden">
-        <div class = "discord_project_title">
+        <div class = "discord_project_title ml-8 mb-8 whitespace-nowrap self-center text-left duration-200 text-[12vw] font-extrabold text-[#fff]">
             <h1>Discord<br>BOT</h1>
         </div>
-        <div class = "discord_project_bt">
-            <p><a href="discord_mainpage.html">Explore</a></p>
-        </div>
+        <!-- <div class = "mb-20 ml-40 self-end z-20 text-center bg-[#809ce2] hover:bg-[#6080d1] cursor-pointer p-[2vw] rounded-[2vw] duration-200">
+            <p class="text-[3vw] font-bold">
+                <a class="no-underline text-[#fff]" routerLink = "/discord">Explore</a>
+            </p>
+        </div> -->
+
+        <app-button-link Name = "Explore" Link = "/discord" Color = "#809ce2" Hover_Color = "#6080d1" class="mb-20 ml-40 self-end"></app-button-link>
     </div>
 </section>
