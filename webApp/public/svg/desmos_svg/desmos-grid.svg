@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800">
+  <path fill="#fff" d="M0 0h800v800H0z" class="dcg-svg-background"/>
+  <g fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2" paint-order="fill stroke markers">
+    <path stroke-opacity=".2" d="M45 0v800M107 0v800M167 0v800M229 0v800M289 0v800M351 0v800M411 0v800M473 0v800M533 0v800M595 0v800M655 0v800M717 0v800M779 0v800M0 761h800M0 701h800M0 639h800M0 577h800M0 517h800M0 455h800M0 395h800M0 333h800M0 273h800M0 211h800M0 151h800M0 89h800M0 29h800" class="dcg-svg-minor-gridline"/>
+    <path stroke-opacity=".3" d="M45 0v800M351 0v800M655 0v800M0 701h800M0 395h800M0 89h800" class="dcg-svg-major-gridline"/>
+  </g>
+  </svg>
