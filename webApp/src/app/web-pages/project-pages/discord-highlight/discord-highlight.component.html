@@ -1,13 +1,40 @@
-<div class="h-screen flex justify-center items-center">
-    <p>discord-highlight works!</p>
-</div>
+<div class="relative">
+    <div class="relative m-0 h-screen overflow-hidden">
+        <div class="w-full m-auto bg-[#e4e4e4] dark:bg-[#282b30] duration-500">
+            <div class="h-[140vh] overflow-hidden flex flex-wrap w-full m-auto rotate-[10deg] translate-y-[-20vh]">
 
-<div class="relative m-0 h-screen w-screen">
-    <div class="w-full m-auto bg-[#e4e4e4] duration-500">
-        <div class="overflow-hidden flex flex-col flex-wrap w-[100/3%] p-[2/3vw] duration-500">
-            @for(message of messages; track $index){
-                <app-discord-message time = "{{message.date}}" name = "{{message.name}}" text="{{message.audioString}}" icon="{{message.avatar}}"></app-discord-message>
-            }
+                <!-- Columns -->
+                @for(number of numbers; track $index){
+                    @let col_index = $index;
+                    <div class="discordColumn overflow-hidden flex flex-col flex-wrap w-[33.33%] p-[0.66vw] duration-500">
+
+                        <!-- Sections -->
+                        @for(number of numbers; track $index){
+                        <div class="discord_section">
+
+                            <!-- Messages -->
+                            @for(message of messages; track $index){
+                                @if($index % 3 == col_index){                            
+                                    <app-discord-message time = "{{message.date}}" name = "{{message.name}}" text="{{message.audioString}}" icon="{{message.avatar}}"></app-discord-message>
+                                }
+                            }
+
+                        </div>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class = 'w-full h-full absolute top-0 left-0 z-0 bg-gradient-to-t from-black to-white opacity-50'></div>
+
+    <div class="w-full h-screen absolute top-0 left-0 flex flex-wrap items-center overflow-hidden">
+        <div class = "discord_project_title">
+            <h1>Discord<br>BOT</h1>
+        </div>
+        <div class = "discord_project_bt">
+            <p><a href="discord_mainpage.html">Explore</a></p>
         </div>
     </div>
 </div>

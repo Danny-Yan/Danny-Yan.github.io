@@ -1,0 +1,72 @@
+/* --------------------- Marquee scrolling animation ---------------------  */
+.discordColumn:nth-child(even) .discord_section {            
+    animation: loopTextA 10s infinite linear;        
+}
+
+@keyframes loopTextA {
+    from {transform: translateY(-100%)}
+    to {transform: translateY(0)}
+}
+
+.discordColumn:nth-child(odd) .discord_section {            
+    animation: loopTextB 10s infinite linear;        
+}
+
+@keyframes loopTextB {
+    from {transform: translateY(0)}
+    to {transform: translateY(-100%)}
+}
+
+.discord_project_title{
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+
+    white-space: nowrap;
+    align-self: center;
+    text-align: left;
+    transition: 0.2s;
+    font-size: 12vw;
+    font-weight: 800;
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    0   -1px 0 #000,
+    1px -1px 0 #000,
+    1px  0   0 #000,
+    1px  1px 0 #000,
+    0    1px 0 #000,
+    -1px  1px 0 #000,
+    -1px  0   0 #000;
+    filter: drop-shadow(1vw 1vw 0 rgb(74, 74, 74)); /* --- white, 74 -- */
+
+}
+
+.discord_project_bt{
+    margin: 0 0 5rem 10rem;
+    align-self: flex-end;
+    transform: translateZ(-1px);
+    z-index: 2;
+    text-align: center;
+
+    background: #809ce2;
+    padding: 2vw;
+    border-radius: 2vw;
+    transition: 0.2s;
+    /* filter: drop-shadow(0 0 0.75rem rgb(131, 131, 131)); */
+}
+
+.discord_project_bt p{
+    font-size: 3vw;
+    font-weight: 800;
+}
+
+.discord_project_bt a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.discord_project_bt:hover{
+    cursor: pointer;
+    background: #6080d1;
+}
+

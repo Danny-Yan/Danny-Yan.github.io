@@ -1,5 +1,5 @@
 <section [ngClass]="isDarkMode ? 'dark': 'block'" class="duration-500">
-    <nav class = "topBAR" *ngIf ="__URL != ''">
+    <nav class = "topBAR z-20 relative" *ngIf ="__URL != ''">
 
         <!-- Side Bar -->
         <div class = "fixed top-0 left-0">
@@ -16,7 +16,7 @@
     </nav>
 
     <!-- Main Content -->
-    <div class="dark:bg-[#282b30] duration-500">
+    <div class="dark:bg-[#282b30] duration-500 z-0 relative">
         <router-outlet></router-outlet>
     </div>
 </section>

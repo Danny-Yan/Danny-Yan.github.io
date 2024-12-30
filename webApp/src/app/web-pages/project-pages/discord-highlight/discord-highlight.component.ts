@@ -10,7 +10,10 @@ import { DiscordMessageComponent } from '../../../components/discord-message/dis
 })
 export class DiscordHighlightComponent implements OnInit {
   messages: any;
-  constructor( private appSettingsService: AppSettingsService) {}
+  numbers: number[];
+  constructor( private appSettingsService: AppSettingsService) {
+    this.numbers = Array(3).fill(0).map((x,i)=>i);
+  }
 
   ngOnInit(){
     this.appSettingsService.getJSON("test_json.html").subscribe(data => {
