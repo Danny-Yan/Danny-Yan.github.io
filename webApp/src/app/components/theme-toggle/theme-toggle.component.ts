@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {NgClass} from "@angular/common"; 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-regular-svg-icons';
-import { ThemeService } from '../../services/theme.service';
+import { ThemeService } from '../../services/theme-service/theme.service';
 
 @Component({
   selector: 'app-theme-toggle',

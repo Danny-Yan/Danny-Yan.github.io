@@ -3,7 +3,7 @@ import { Router, RouterOutlet } from '@angular/router';
 import { Location, NgIf, NgClass} from '@angular/common';
 import { ThemeToggleComponent } from './components/theme-toggle/theme-toggle.component';
 import { SidebarMenuComponent } from './components/sidebar-menu/sidebar-menu.component';
-import { ThemeService } from './services/theme.service';
+import { ThemeService } from './services/theme-service/theme.service';
 
 @Component({
   selector: 'app-root',
