@@ -8,12 +8,12 @@ import { Observable } from 'rxjs';
 export class AppSettingsService {
 
   constructor( private http: HttpClient) { 
-    this.getJSON().subscribe(data => {
+    this.getJSON("discord_messages.html").subscribe(data => {
       console.log(data);
     })
   }
 
-  public getJSON(): Observable<any> {
-    return this.http.get("./json/discord_messages.html");
+  public getJSON(path:string): Observable<any> {
+    return this.http.get("./json/" +  path);
   }
 }

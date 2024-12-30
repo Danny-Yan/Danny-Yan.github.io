@@ -1,3 +1,13 @@
 <div class="h-screen flex justify-center items-center">
     <p>discord-highlight works!</p>
 </div>
+
+<div class="relative m-0 h-screen w-screen">
+    <div class="w-full m-auto bg-[#e4e4e4] duration-500">
+        <div class="overflow-hidden flex flex-col flex-wrap w-[100/3%] p-[2/3vw] duration-500">
+            @for(message of messages; track $index){
+                <app-discord-message time = "{{message.date}}" name = "{{message.name}}" text="{{message.audioString}}" icon="{{message.avatar}}"></app-discord-message>
+            }
+        </div>
+    </div>
+</div>
