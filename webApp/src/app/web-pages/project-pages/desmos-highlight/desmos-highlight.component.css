@@ -62,8 +62,7 @@
 } */
 
 .showpath{
-    transition: 5s;
-    transform: translateY(-100%);
+    transform: translateY(-15%);
     transition-timing-function: cubic-bezier(.01,1.65,.33,.71);
 }
 
