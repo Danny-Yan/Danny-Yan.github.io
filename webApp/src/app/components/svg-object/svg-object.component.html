@@ -1,1 +1,1 @@
-<object type="image/svg+xml" data="./svg/desmos_svg/{{svg}}" class = "svgdesmos"></object>
+<object type="image/svg+xml" [data]="svg_url | safe:'resourceUrl'" class = "svgdesmos" [ngClass] = "class"></object>
