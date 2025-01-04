@@ -19,7 +19,6 @@ export class DiscordHighlightComponent implements OnInit {
 
   ngOnInit(){
     this.appSettingsService.getJSON("test_json.html").subscribe(data => {
-      console.log(data);
       this.messages = data;
     });
   };

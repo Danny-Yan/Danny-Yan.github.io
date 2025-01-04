@@ -7,23 +7,20 @@ export class AnimationServiceService {
 
   constructor() { }
 
-  animateSVGs(): void{
-    let observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-              console.log(entry.target); 
-              entry.target.classList.add('showpath');
-          }
-      });
+  observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('showpath');
+        }
     });
+  });
 
+  animateSVGs(): void{
     let svgObject = document.querySelectorAll('.svgdesmos');
 
     svgObject.forEach((svgQuery: any) => {  
         svgQuery.onload = () => {
-          console.log(svgQuery.contentDocument);
           const svgelm = svgQuery.contentDocument.querySelectorAll('path');
-          console.log(svgelm);
           var noPaths = svgelm.length;
           var count = 0;
           svgelm.forEach((path: any) => {
@@ -32,7 +29,7 @@ export class AnimationServiceService {
               path.setAttribute("stroke-dasharray", `${length}px`);
               path.setAttribute("animation-delay", `${count / (noPaths)}s`); 
               count += 1;
-              observer.observe(path);
+              this.observer.observe(path);
           });
         }
     });
