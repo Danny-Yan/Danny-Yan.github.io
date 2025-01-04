@@ -18,7 +18,6 @@ export class SvgObjectComponent implements OnInit {
 
     ngOnInit(): void {
       this.svg_url = `/svg/desmos_svg/${this.svg}`;
-      console.log(this.svg_url);
-      // this.animationService.animateSVGs();
+      this.animationService.animateSVGs();
     }
 }
