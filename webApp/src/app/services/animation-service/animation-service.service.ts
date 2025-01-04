@@ -18,8 +18,6 @@ export class AnimationServiceService {
     });
 
     let svgObject = document.querySelectorAll('.svgdesmos');
-    console.log(svgObject);
-
 
     svgObject.forEach((svgQuery: any) => {  
         svgQuery.onload = () => {
