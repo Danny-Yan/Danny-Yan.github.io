@@ -4,26 +4,7 @@
     <div class="relative m-0 h-screen overflow-hidden">
         <div class="w-full m-auto bg-[#e4e4e4] dark:bg-[#282b30] duration-500">
             <div class="h-[140vh] overflow-hidden flex flex-wrap w-full m-auto rotate-[10deg] translate-y-[-20vh]">
-
-                <!-- Columns -->
-                @for(number of numbers; track $index){
-                    @let col_index = $index;
-                    <div class="discordColumn overflow-hidden flex flex-col flex-wrap w-[33.33%] p-[0.66vw] duration-500">
-
-                        <!-- Sections -->
-                        @for(number of numbers; track $index){
-                        <div class="discord_section">
-
-                            <!-- Messages -->
-                            @for(message of messages; track $index){
-                                @if($index % message_len == col_index){                            
-                                    <app-discord-message time = "{{message.date}}" name = "{{message.name}}" text="{{message.audioString}}" icon="{{message.avatar}}"></app-discord-message>
-                                }
-                            }
-                        </div>
-                        }
-                    </div>
-                }
+                <app-discord-column-triple [messages]="messages"></app-discord-column-triple>
             </div>
         </div>
     </div>

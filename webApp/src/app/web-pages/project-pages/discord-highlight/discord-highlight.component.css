@@ -1,22 +1,3 @@
-/* --------------------- Marquee scrolling animation ---------------------  */
-.discordColumn:nth-child(even) .discord_section {            
-    animation: loopTextA 10s infinite linear;        
-}
-
-@keyframes loopTextA {
-    from {transform: translateY(-100%)}
-    to {transform: translateY(0)}
-}
-
-.discordColumn:nth-child(odd) .discord_section {            
-    animation: loopTextB 10s infinite linear;        
-}
-
-@keyframes loopTextB {
-    from {transform: translateY(0)}
-    to {transform: translateY(-100%)}
-}
-
 .discord_project_title{
     text-shadow:
     -1px -1px 0 #000,

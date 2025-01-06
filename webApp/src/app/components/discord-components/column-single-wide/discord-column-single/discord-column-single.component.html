@@ -1,0 +1,21 @@
+<div class="overflow-hidden flex flex-wrap w-full m-auto">
+    <!-- Columns -->
+    @for(number of col_amount; track $index){
+        @let col_index = $index;
+        <div class="discordColumn overflow-hidden flex flex-col flex-wrap w-[calc(100%/1)] p-[calc(2vw/1)] duration-500">
+
+            <!-- Sections -->
+            @for(number of section_amount; track $index){
+            <div class="discord_section">
+
+                <!-- Messages -->
+                @for(message of messages; track $index){
+                    @if($index % col_num == col_index){                            
+                        <app-discord-message-single time = "{{message.date}}" name = "{{message.name}}" text="{{message.audioString}}" icon="{{message.avatar}}"></app-discord-message-single>
+                    }
+                }
+            </div>
+            }
+        </div>
+    }
+</div>

@@ -33,8 +33,5 @@ export class AnimationServiceService {
           });
         }
     });
-  
-    // const desmosButton = document.getElementById('svgdesmosbutton');
-    // this.observer.observe(desmosButton); 
   }
 }

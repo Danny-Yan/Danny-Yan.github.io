@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ButtonLinkComponent } from '../../../components/button-link/button-link.component';
 import { SvgObjectComponent } from '../../../components/svg-object/svg-object.component';
 
@@ -9,6 +9,7 @@ import { SvgObjectComponent } from '../../../components/svg-object/svg-object.co
   styleUrl: './desmos-highlight.component.css'
 })
 export class DesmosHighlightComponent{
-
+// Discord message change to include css variables for column number
+// Figure out why the hell button just shows up randomly / button not scaling properly
 
 }
