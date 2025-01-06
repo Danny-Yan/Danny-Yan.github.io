@@ -1,6 +1,6 @@
 import { Component, Input, OnInit} from '@angular/core';
-import { AnimationServiceService } from '../../services/animation-service/animation-service.service';
-import { SafePipe } from '../../pipes/safe-pipe/safe-pipe.pipe';
+import { AnimationServiceService } from '../../../services/animation-service/animation-service.service';
+import { SafePipe } from '../../../pipes/safe-pipe/safe-pipe.pipe';
 import { NgClass } from '@angular/common';
 
 @Component({

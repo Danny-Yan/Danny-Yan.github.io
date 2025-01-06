@@ -1,16 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { AppSettingsService } from '../../../services/app-settings/app-settings.service';
-import { ButtonLinkComponent } from '../../../components/button-link/button-link.component';
+import { ButtonLinkComponent } from '../../../components/ui/button-link/button-link.component';
 import { DiscordColumnTripleComponent } from "../../../components/discord-components/column-triple-wide/discord-column-triple/discord-column-triple.component";
+import { DiscordColumnSingleComponent } from '../../../components/discord-components/column-single-wide/discord-column-single/discord-column-single.component';
 
 @Component({
   selector: 'app-discord-highlight',
-  imports: [ButtonLinkComponent, DiscordColumnTripleComponent],
+  imports: [ButtonLinkComponent, DiscordColumnTripleComponent, DiscordColumnSingleComponent],
   templateUrl: './discord-highlight.component.html',
   styleUrl: './discord-highlight.component.css'
 })
 export class DiscordHighlightComponent implements OnInit {
   messages: Array<any> = [];
+  innerWidth: number = 0;
 
   constructor( private appSettingsService: AppSettingsService) {}
 
@@ -18,5 +20,11 @@ export class DiscordHighlightComponent implements OnInit {
     this.appSettingsService.getJSON("test_json.html").subscribe(data => {
       this.messages = data;
     });
+    this.innerWidth = window.innerWidth;
   };
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.innerWidth = window.innerWidth;
+  }
 }

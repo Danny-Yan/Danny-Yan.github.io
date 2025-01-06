@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { Location, NgIf, NgClass} from '@angular/common';
-import { ThemeToggleComponent } from './components/theme-toggle/theme-toggle.component';
-import { SidebarMenuComponent } from './components/sidebar-menu/sidebar-menu.component';
+import { ThemeToggleComponent } from './components/ui/theme-toggle/theme-toggle.component';
+import { SidebarMenuComponent } from './components/ui/sidebar-menu/sidebar-menu.component';
 import { ThemeService } from './services/theme-service/theme.service';
 
 @Component({

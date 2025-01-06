@@ -3,8 +3,13 @@
     <!-- Moving background -->
     <div class="relative m-0 h-screen overflow-hidden">
         <div class="w-full m-auto bg-[#e4e4e4] dark:bg-[#282b30] duration-500">
-            <div class="h-[140vh] overflow-hidden flex flex-wrap w-full m-auto rotate-[10deg] translate-y-[-20vh]">
-                <app-discord-column-triple [messages]="messages"></app-discord-column-triple>
+            <div class="lg:h-[140vh] overflow-hidden flex flex-wrap w-full m-auto lg:rotate-[10deg] lg:translate-y-[-20vh]">
+                @if(innerWidth < 1024){
+                    <app-discord-column-single [messages]="messages"></app-discord-column-single>
+                }
+                @else {
+                    <app-discord-column-triple [messages]="messages"></app-discord-column-triple>
+                }
             </div>
         </div>
     </div>
@@ -16,7 +21,7 @@
     <div class="w-full h-screen absolute top-0 left-0 flex flex-wrap items-center overflow-hidden">
 
         <!-- Title -->
-        <div class = "discord_project_title ml-8 mb-8 whitespace-nowrap self-center text-left duration-200 text-[12vw] font-extrabold text-[#fff]">
+        <div class = "discord_project_title ml-8 mb-8 whitespace-nowrap self-center text-left duration-200 [font-size:_clamp(6rem,15vw,17rem)] font-extrabold text-[#fff]">
             <h1>Discord<br>BOT</h1>
         </div>
         <!-- <div class = "mb-20 ml-40 self-end z-20 text-center bg-[#809ce2] hover:bg-[#6080d1] cursor-pointer p-[2vw] rounded-[2vw] duration-200">
