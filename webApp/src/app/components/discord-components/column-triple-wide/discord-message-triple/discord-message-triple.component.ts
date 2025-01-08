@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './discord-message-triple.component.css'
 })
 export class DiscordMessageTripleComponent {
-    @Input({ required: true }) time: string = '';
+    @Input({ required: true }) time: any;
     @Input({ required: true }) name: string = '';
     @Input({ required: true }) text: string = '';
     @Input({ required: true }) icon: any;

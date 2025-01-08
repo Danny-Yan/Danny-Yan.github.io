@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './discord-message-single.component.css'
 })
 export class DiscordMessageSingleComponent {
-    @Input({ required: true }) time: string = '';
+    @Input({ required: true }) time: any;
     @Input({ required: true }) name: string = '';
     @Input({ required: true }) text: string = '';
     @Input({ required: true }) icon: any;

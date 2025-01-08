@@ -11,7 +11,7 @@
                 <!-- Messages -->
                 @for(message of messages; track $index){
                     @if($index % col_num == col_index){                            
-                        <app-discord-message-single time = "{{message.date}}" name = "{{message.name}}" text="{{message.audioString}}" icon="{{message.avatar}}"></app-discord-message-single>
+                        <app-discord-message-single [time] = "message.date" name = "{{message.name}}" text="{{message.audioString}}" icon="{{message.avatar}}"></app-discord-message-single>
                     }
                 }
             </div>

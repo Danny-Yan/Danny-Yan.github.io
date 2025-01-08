@@ -1,0 +1,55 @@
+.hover-background{
+    transition: background-color 0.3s ease-in-out;
+}
+.hover-effect{
+    transition: opacity 0.3s ease-in-out;
+}
+
+.button-box{
+    box-shadow: -120px 0 100px -100px black inset;
+}
+
+.item-A:hover{
+    transition-delay: 0.1s;
+    background-color: rgba(0, 0, 0, 0.7)
+}
+
+.item-A:hover ~ .item-B{
+    transition-delay: 0.2s;
+    background-color: rgba(0, 0, 0, 0.6)
+}
+
+
+.item-A:hover ~ .item-C{
+    transition-delay: 0.3s;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+.icon{
+    filter: drop-shadow(2px 0px rgba(0, 0, 0, 1))
+    drop-shadow(0px 2px rgba(0, 0, 0, 1))
+    drop-shadow(0px -2px rgba(0, 0, 0, 1))
+    drop-shadow(-2px 0px rgba(0, 0, 0, 1))
+    drop-shadow(-10px 0px rgba(74, 74, 74, 1));
+}
+
+.item-A:hover .icon,
+.item-A:hover ~ .item-B .icon,
+.item-A:hover ~ .item-C .icon{
+    transition-delay: 0.3s;
+    opacity: 1;
+}
+
+.idle-arrow{
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-name: idleArrows;
+}
+
+@keyframes showA{0%{background-color: rgba(0, 0, 0, 0)}100%{background-color: rgba(0, 0, 0, 0.7)}}
+@keyframes showB{0%{background-color: rgba(0, 0, 0, 0)}100%{background-color: rgba(0, 0, 0, 0.6)}}
+@keyframes showC{0%{background-color: rgba(0, 0, 0, 0)}100%{background-color: rgba(0, 0, 0, 0.5)}}
+/* @keyframes showIcon{0%{color: rgba(256, 256, 256, 0)}100%{color: rgba(256, 256, 256, 1)}} */
+@keyframes showIcon{0%{opacity: 0}100%{opacity: 1}}
+@keyframes idleArrows{0%{transform: translate(-20px, 0)}50%{transform: translate(-25px, 0)}100%{transform: translate(-20px, 0)}}
