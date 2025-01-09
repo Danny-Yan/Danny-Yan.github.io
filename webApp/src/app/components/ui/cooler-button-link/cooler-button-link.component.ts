@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { faPlay, faCaretRight, faAngleRight} from '@fortawesome/free-solid-svg-icons'; 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -13,4 +13,6 @@ export class CoolerButtonLinkComponent {
     faPlay = faPlay
     faCaret = faCaretRight
     faAngle = faAngleRight
+
+    @Input({required: true}) link: string = '';
 }
