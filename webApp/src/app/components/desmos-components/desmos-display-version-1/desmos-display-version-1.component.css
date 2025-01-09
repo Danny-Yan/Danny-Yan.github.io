@@ -1,0 +1,47 @@
+
+.desmosbox{
+    overflow: hidden;
+    white-space: wrap;
+    border: black;
+    border-width: 0.2rem;
+    border-style: solid;
+    position: relative;
+}
+
+.desmosbox:hover{
+    border-color: #5071c3;
+}
+
+.desmosbox a{
+    z-index: 1;
+    opacity: 0;
+    height: 200%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 1s;
+    padding-top: 100%;
+    text-decoration: none;
+    color: black;
+}
+
+.desmosbox a:hover{
+    transform: translateY(-40%);
+    opacity: 1;
+    cursor: pointer;
+}
+
+.desmosbox a:hover + object{
+    filter: blur(3px);
+}
+
+.desmosbox p{
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.desmos_svg{
+    width: 100%;
+    height: 100%;
+}

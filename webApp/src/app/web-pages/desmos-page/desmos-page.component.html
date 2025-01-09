@@ -1,1 +1,21 @@
-<p>desmos-page works!</p>
+<section class = "h-full w-full flex flex-wrap justify-center items-center whitespace-nowrap text-center duration-200 text-black dark:text-white">
+    <!-- Desmos background -->
+    <div class="z-[-2] h-screen w-full fixed top-0 left-0 fillerPage bg-white dark:bg-[#282b30]"></div>
+
+    <!-- Main title -->
+    <div class = "w-full text-[15vw] pt-[7vh] pb-[1vh]">
+        <h1>Desmos</h1>
+    </div>
+
+    <!-- Sub text -->
+    <div class = "text-[1rem] md:text-[2vw] pb-[7vh]">
+        <p>A collection of projects that I have made</p>
+    </div>
+    
+    <!-- Grid -->
+    <div class = "w-full grid grid-cols-[repeat(auto-fill,_minmax(300px,_1fr))] 2xl:grid-cols-[repeat(auto-fill,_minmax(400px,_1fr))] gap-4 p-2">
+        @for(graph of desmos_dict; track $index){
+            <app-desmos-display-version-1 [link]="graph.link" [description]="graph.description" [svg]="graph.svg"></app-desmos-display-version-1>
+        }
+    </div>
+</section>

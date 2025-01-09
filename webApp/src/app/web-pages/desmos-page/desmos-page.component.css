@@ -1,0 +1,12 @@
+.fillerPage{
+    background:
+        linear-gradient(-90deg, rgb(113, 113, 113, 0.5) 3px, transparent 3px),
+        linear-gradient(rgb(113, 113, 113, 0.5) 3px, transparent 3px),
+        linear-gradient(-90deg, rgb(213, 213, 213, 0.5) 2px, transparent 2px),
+        linear-gradient(rgb(213, 213, 213, 0.5) 2px, transparent 2px);
+    background-size:
+        200px 200px,
+        200px 200px,
+        40px 40px,
+        40px 40px;
+}
