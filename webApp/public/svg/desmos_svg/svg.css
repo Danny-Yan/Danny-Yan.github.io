@@ -6,7 +6,7 @@ rect.btn {
 }
 
 .showpath{
-    animation: dash 5s ease-in-out forwards;
+    animation: dash 10s ease-in-out forwards;
 }
 
 @keyframes dash{

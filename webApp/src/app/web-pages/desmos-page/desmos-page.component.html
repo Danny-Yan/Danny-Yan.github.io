@@ -1,4 +1,4 @@
-<section class = "h-full w-full flex flex-wrap justify-center items-center whitespace-nowrap text-center duration-200 text-black dark:text-white">
+<section class = "h-full w-full flex flex-wrap justify-center items-center whitespace-nowrap text-center duration-200 text-[#353535] dark:text-white">
     <!-- Desmos background -->
     <div class="z-[-2] h-screen w-full fixed top-0 left-0 fillerPage bg-white dark:bg-[#282b30]"></div>
 
@@ -15,7 +15,7 @@
     <!-- Grid -->
     <div class = "w-full grid grid-cols-[repeat(auto-fill,_minmax(300px,_1fr))] 2xl:grid-cols-[repeat(auto-fill,_minmax(400px,_1fr))] gap-4 p-2">
         @for(graph of desmos_dict; track $index){
-            <app-desmos-display-version-1 [link]="graph.link" [description]="graph.description" [svg]="graph.svg"></app-desmos-display-version-1>
+            <app-desmos-display-version-2 [link]="graph.link" [description]="graph.description" [svg]="graph.svg"></app-desmos-display-version-2>
         }
     </div>
 </section>

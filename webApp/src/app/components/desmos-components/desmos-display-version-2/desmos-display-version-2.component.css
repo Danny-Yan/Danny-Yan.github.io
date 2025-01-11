@@ -1,0 +1,7 @@
+.top-transition{
+    transition: top 1s cubic-bezier(.13,.81,.52,1.02);
+}
+
+.left-transition{
+    transition: left 1s cubic-bezier(.13,.81,.52,1.02) 0.5s;
+}

@@ -7,7 +7,7 @@ import { CoolerCircleButtonLinkComponent } from '../../../components/ui/cooler-c
 
 @Component({
   selector: 'app-discord-highlight',
-  imports: [ButtonLinkComponent, DiscordColumnTripleComponent, DiscordColumnSingleComponent, CoolerCircleButtonLinkComponent],
+  imports: [DiscordColumnTripleComponent, DiscordColumnSingleComponent, CoolerCircleButtonLinkComponent],
   templateUrl: './discord-highlight.component.html',
   styleUrl: './discord-highlight.component.css'
 })
