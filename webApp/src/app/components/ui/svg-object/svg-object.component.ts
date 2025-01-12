@@ -11,7 +11,7 @@ import { NgClass } from '@angular/common';
 })
 export class SvgObjectComponent implements OnInit {
     @Input({ required: true }) svg: string = '';
-    @Input() class: string = "";
+    @Input() svg_class: string = "";
     svg_url: string = '';
 
     constructor( private animationService: AnimationServiceService) {}
