@@ -2,10 +2,11 @@ import { Component, Input, AfterViewInit, ViewChild, ElementRef } from '@angular
 import { SvgObjectComponent } from '../../ui/svg-object/svg-object.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons'; 
+import { ButtonLinkComponent } from '../../ui/button-link/button-link.component';
 
 @Component({
   selector: 'app-desmos-display-version-2',
-  imports: [SvgObjectComponent, FontAwesomeModule],
+  imports: [SvgObjectComponent, FontAwesomeModule, ButtonLinkComponent],
   templateUrl: './desmos-display-version-2.component.html',
   styleUrl: './desmos-display-version-2.component.css'
 })
