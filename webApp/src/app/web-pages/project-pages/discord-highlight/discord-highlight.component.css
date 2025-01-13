@@ -10,3 +10,12 @@
     -1px  0   0 #000;
     filter: drop-shadow(1vw 1vw 0 rgb(74, 74, 74)); /* --- white, 74 -- */
 }
+
+/* .discord-highlight{
+    perspective: 1px;
+    transform-style: preserve-3d;
+}
+
+.moving-background{
+    transform: translateZ(-1px) scale(2.2);
+} */

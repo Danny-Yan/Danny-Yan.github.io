@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './ui-highlight.component.css'
 })
 export class UiHighlightComponent {
-
+  // Fun house theme
+  // Meepings dancing in unison
+  // Windmill / water wheel
+  // Steam pipes
+  // Rube Goldberg machine
 }

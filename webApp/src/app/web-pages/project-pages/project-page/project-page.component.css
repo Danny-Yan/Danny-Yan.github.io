@@ -1,0 +1,17 @@
+html{
+    height: 100vh;
+    overflow: hidden;
+}
+.project-page {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    height: 100vh;
+    perspective: 1px;
+    transform-style: preserve-3d;
+}
+
+section{
+    height: 100vh;
+    scroll-snap-align: start;
+}
