@@ -1,11 +1,12 @@
 import { NgClass } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @Component({
   selector: 'app-button-link',
-  imports: [RouterLink, NgClass],
+  imports: [RouterLink, NgClass, FontAwesomeModule],
   templateUrl: './button-link.component.html',
   styleUrl: './button-link.component.css'
 })

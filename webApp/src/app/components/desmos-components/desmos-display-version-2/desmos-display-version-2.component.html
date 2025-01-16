@@ -1,19 +1,21 @@
 <!-- Drop down page -->
 <div #display_dom class="top-transition fixed top-[-100%] left-0 flex justify-center items-center w-full h-screen z-20">
     <div class="flex justify-center items-center w-9/12">
-        <div class = "relative w-6/12">
+        <div class = "relative w-8/12">
             <!-- Actual Bg -->
-            <div #bg_dom class = "left-transition absolute top-0 left-0 w-full h-full flex text-wrap p-5 z-0 bg-gray-100 dark:bg-gray-700 text-[#353535] dark:text-white rounded-r-3xl border-black border-t-[0.2rem] border-r-[0.2rem] border-b-[0.2rem]">
-                <div class="pt-[1vh] flex-1 flex flex-col">
+            <!-- <div #bg_dom class = "left-transition absolute top-0 left-0 w-full h-full flex text-wrap p-5 z-0 bg-gray-100 dark:bg-gray-700 text-[#353535] dark:text-white rounded-r-3xl border-black border-t-[0.2rem] border-r-[0.2rem] border-b-[0.2rem]">
+                <div class="pt-[1vh] flex-1 flex flex-col justify-between">
                     <h1 class="text-[2vw]">{{description}}</h1>
-                    <app-button-link Name = "Explore" source = "{{link}}" bg_classes = "bg-[#be5454] hover:bg-[#833939]"></app-button-link>
-                </div>
+                    <div class="flex">
+                        <app-button-link Name = "Explore" source = "{{link}}" bg_classes = "bg-[#be5454] hover:bg-[#833939]"></app-button-link>
+                    </div>
+                </div> -->
 
                 <!-- X mark -->
-                <div class="px-6 h-full">
+                <!-- <div class="px-6 h-full">
                     <fa-icon [icon]="faXmark" class="text-[50px] hover:text-[#5071c3] cursor-pointer" (click)="close()"></fa-icon>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Svg -->
             <div class="border-[0.2rem] border-black z-40">
@@ -22,7 +24,7 @@
         </div>
 
         <!-- Hack -->
-        <div class="w-6/12"></div>
+        <!-- <div class="w-6/12"></div> -->
     </div>
 </div>
 
