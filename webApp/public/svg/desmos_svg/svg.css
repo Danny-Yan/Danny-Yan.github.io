@@ -1,3 +1,8 @@
+/* NEW SVG SETUP */
+/* Compress => https://www.iloveimg.com/compress-image/compress-svg */
+/* Place in public/svg/desmos_svg */
+/* Add <?xml-stylesheet type="text/css" href="svg.css" ?> */
+
 rect.btn {
   stroke:#fff;
   fill:#fff;
