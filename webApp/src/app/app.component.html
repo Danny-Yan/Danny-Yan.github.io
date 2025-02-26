@@ -15,8 +15,19 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <div class="dark:bg-[#282b30] duration-500 z-0 relative">
+    <!-- Custom Scrollbar -->
+    <div class="max-h-screen overflow-y-auto
+    [&::-webkit-scrollbar]:w-2.5
+    [&::-webkit-scrollbar-track]:rounded-full
+    [&::-webkit-scrollbar-track]:bg-gray-300
+    [&::-webkit-scrollbar-thumb]:rounded-full
+    [&::-webkit-scrollbar-thumb]:bg-gray-500
+    dark:[&::-webkit-scrollbar-track]:bg-neutral-700
+    dark:[&::-webkit-scrollbar-thumb]:bg-neutral-200
+    
+    dark:bg-[#282b30] duration-500 z-0 relative">
+
+        <!-- Main Content -->
         <router-outlet></router-outlet>
     </div>
 </section>

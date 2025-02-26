@@ -13,6 +13,10 @@
 }
 
 :root {
+    /* Scrollbar hidden by default */
+    scrollbar-width: none;
+
+    /* Temp Colors - mostly not used */
     --discord_sun: none;
     --discord_moon: block;
     --discord_theme_change: #000;
@@ -33,10 +37,11 @@
     --titleblack: #011627;
 }
 
+/* Disable scrolling using no-doc-scroll */
 :root:has(.no-doc-scroll) {
     overflow:hidden;
 }
 
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}

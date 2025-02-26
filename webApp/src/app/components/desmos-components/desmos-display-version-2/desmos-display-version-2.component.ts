@@ -14,7 +14,7 @@ export class DesmosDisplayVersion2Component implements AfterViewInit {
   @Input({required: true}) description: string = '';
   @Input({required: true}) svg: string = '';
   @ViewChild('display_dom') displayDom: ElementRef = ElementRef.prototype;
-  @ViewChild('desmos_link') desmosLink: ElementRef = ElementRef.prototype;
+  @ViewChild('bg_dom') bgDom: ElementRef = ElementRef.prototype;
   faXmark = faXmark;
   faArrowRight = faArrowRight;
 
@@ -25,10 +25,13 @@ export class DesmosDisplayVersion2Component implements AfterViewInit {
   open() {
     this.displayDom.nativeElement.style.top = "0px";
     this.displayDom.nativeElement.classList.add('no-doc-scroll');
+    this.bgDom.nativeElement.style.opacity = '100%';
+    this.bgDom.nativeElement.classList.remove('hidden');
   };
   close() {
     this.displayDom.nativeElement.style.top = "-100%";
     this.displayDom.nativeElement.classList.remove('no-doc-scroll');
-
+    this.bgDom.nativeElement.classList.add('hidden');
+    this.bgDom.nativeElement.style.opacity = '0%';
   };
 }
