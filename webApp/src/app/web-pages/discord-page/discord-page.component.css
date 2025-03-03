@@ -2,3 +2,25 @@
     background: rgb(0,212,255);
     background: linear-gradient(90deg, rgba(0,212,255,0.3) 0%, rgba(14,17,131,0) 53%, rgba(0,212,255,0.29735644257703087) 100%);
 }
+
+.myButton {
+	box-shadow: 0px 0px 0px 0.2vw #9fb4f2;
+	background-color:#7279da;
+	border-radius:1vw;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size: 3vw;
+    font-weight: 700;
+	padding:1vw 2vw;
+	text-decoration:none;
+}
+.myButton:hover {
+	background-color:#5a61ad;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
