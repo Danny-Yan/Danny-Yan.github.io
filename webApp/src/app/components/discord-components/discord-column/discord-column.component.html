@@ -2,7 +2,10 @@
     <!-- Columns -->
     @for(number of col_amount; track $index){
         @let col_index = $index;
-        <div class="discordColumn overflow-hidden flex flex-col flex-wrap w-[calc(100%/3)] p-[calc(2vw/3)] duration-500">
+        <div class="discordColumn overflow-hidden flex flex-col flex-wrap duration-500"
+            [ngStyle]='{"width": "calc(100% / " + col_num + "*" + scale +")", 
+                        "padding": "calc(2vw / " + col_num + "*" + scale +")",
+            }'>
 
             <!-- Sections -->
             @for(number of section_amount; track $index){
@@ -11,7 +14,7 @@
                 <!-- Messages -->
                 @for(message of messages; track $index){
                     @if($index % col_num == col_index){                            
-                        <app-discord-message-triple [time] = "message.date" name = "{{message.name}}" text="{{message.audioString}}" icon="{{message.avatar}}"></app-discord-message-triple>
+                        <app-discord-message [scale] = 'scale' [col_num] = 'col_num' [time] = "message.date" name = "{{message.name}}" text="{{message.audioString}}" icon="{{message.avatar}}"></app-discord-message>
                     }
                 }
             </div>

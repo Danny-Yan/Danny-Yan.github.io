@@ -5,10 +5,10 @@
         <div class="w-full m-auto bg-[#e4e4e4] dark:bg-[#282b30] duration-500 h-full">
             <div class="lg:h-[140%] overflow-hidden flex flex-wrap w-full m-auto lg:rotate-[10deg] lg:translate-y-[-20vh]">
                 @if(innerWidth < 1024){
-                    <app-discord-column-single [messages]="messages"></app-discord-column-single>
+                    <app-discord-column [scale]="1" [col_num]="1" [messages]="messages"></app-discord-column>
                 }
                 @else {
-                    <app-discord-column-triple [messages]="messages"></app-discord-column-triple>
+                    <app-discord-column [scale]="1" [col_num]="3" [messages]="messages"></app-discord-column>
                 }
             </div>
         </div>

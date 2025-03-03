@@ -1,11 +1,10 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { DiscordColumnSingleComponent } from '../../components/discord-components/column-single-wide/discord-column-single/discord-column-single.component';
 import { AppSettingsService } from '../../services/app-settings/app-settings.service';
-import { DiscordColumnTripleComponent } from '../../components/discord-components/column-triple-wide/discord-column-triple/discord-column-triple.component';
+import { DiscordColumnComponent } from '../../components/discord-components/discord-column/discord-column.component';
 
 @Component({
   selector: 'app-discord-page',
-  imports: [DiscordColumnSingleComponent, DiscordColumnTripleComponent],
+  imports: [DiscordColumnComponent],
   templateUrl: './discord-page.component.html',
   styleUrl: './discord-page.component.css'
 })
