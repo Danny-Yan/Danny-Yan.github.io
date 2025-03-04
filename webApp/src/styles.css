@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@theme {
+    --breakpoint-3xl: 112rem;
+}
+
 *{
     margin: 0;
     padding: 0;
