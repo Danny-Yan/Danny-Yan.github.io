@@ -1,5 +1,5 @@
-<div class="h-screen flex items-center justify-center">
-    <div class="text-center">
-        <h1> WELCOME </h1>
-    </div>
+<div class="h-screen w-screen relative dark:text-[white]">
+    <app-text-typing-animation text="HI" class="absolute bottom-0 left-0 text-[50vw] opacity-10 h-[50vw]" [start]="activateHI"></app-text-typing-animation>
+    <app-text-typing-animation text="HELLO" class="absolute top-[-5%] left-[20%] text-[20vw] opacity-50 font-extrabold h-[20vw]" [start]="activateHELLO"></app-text-typing-animation>
+    <app-text-typing-animation text="WELCOME" class="absolute top-[30%] left-[10%] text-[16vw] opacity-80 font-semibold h-[16vw]" [start]="activateWELCOME"></app-text-typing-animation>
 </div>

@@ -1,0 +1,11 @@
+<div class="h-full flex flex-nowrap w-full">
+    <div class="text-clip overflow-hidden h-full leading-none text-left"
+        [ngClass]="start ? 'main-text' : 'w-0'">
+        {{text}}
+    </div>
+
+    <!-- Cursor -->
+    <div class="h-full w-4 bg-black opacity-0"
+    [ngClass]="start ? 'cursor-animation' : 'opacity-0'">
+    </div>
+</div>

@@ -1,0 +1,28 @@
+.main-text{
+    animation: expand-text 0.5s ease-in-out;
+}
+
+.cursor-animation{
+    animation: change-opacity 1s ease-in-out;
+}
+
+@keyframes expand-text {
+    0% {
+      max-width: 0%;
+    }
+    100% {
+      max-width: 100%;
+    }
+}
+
+@keyframes change-opacity {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+}
