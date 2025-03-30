@@ -1,12 +1,12 @@
-<div class="h-screen w-screen relative overflow-hidden dark:text-[white] bg-white">
-    <app-text-typing-animation text="HI" class="absolute bottom-0 left-0 text-[50vw] opacity-10 h-[50vw]" [start]="activate[0]"></app-text-typing-animation>
-    <app-text-typing-animation text="HELLO" class="absolute top-[-5%] left-[20%] text-[20vw] opacity-50 font-extrabold h-[20vw]" [start]="activate[1]"></app-text-typing-animation>
-    <app-text-typing-animation text="WELCOME" class="absolute top-[30%] left-[10%] text-[16vw] opacity-80 font-semibold h-[16vw]" [start]="activate[2]"></app-text-typing-animation>
+<div class="h-screen w-screen relative overflow-hidden bg-white">
+    <app-text-typing-animation text="HI" class="absolute bottom-0 left-0 text-[50vw] opacity-10 h-[50vw] text-black" [start]="activate[0]"></app-text-typing-animation>
+    <app-text-typing-animation text="HELLO" class="absolute top-[-5%] left-[20%] text-[20vw] opacity-50 font-extrabold h-[20vw] text-black" [start]="activate[1]"></app-text-typing-animation>
+    <app-text-typing-animation text="WELCOME" class="absolute top-[30%] left-[10%] text-[16vw] opacity-80 font-semibold h-[16vw] text-black" [start]="activate[2]"></app-text-typing-animation>
     <app-background-swipe-effect class="absolute top-0 left-0 rotate-180" [start] = "activate[3]"></app-background-swipe-effect>
 
     <!-- Main Text -->
     <div class="absolute top-0 left-0 w-full h-full z-30">
-        <div class="w-full h-full flex flex-col justify-center items-end text-right gap-2 text-white font-bold">
+        <div class="w-full h-full flex flex-col justify-center items-end text-right gap-2 font-bold">
             <app-text-typing-animation text="I'm Danny" class="text-[10vw] h-[11vw]" [start]="activate[4]"></app-text-typing-animation>
             <app-text-typing-animation text="I like to make websites and stuff" class="text-[5vw] h-[5vw]" [start]="activate[5]"></app-text-typing-animation>
         </div>

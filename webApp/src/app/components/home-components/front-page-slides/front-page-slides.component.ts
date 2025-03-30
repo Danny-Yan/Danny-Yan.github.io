@@ -5,10 +5,11 @@ import { DiscordColumnComponent } from '../../discord-components/discord-column/
 import { AppSettingsService } from '../../../services/app-settings/app-settings.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faAngleRight, faAngleLeft} from '@fortawesome/free-solid-svg-icons'; 
+import { MiniCardComponent } from '../../ui/mini-card/mini-card.component';
 
 @Component({
   selector: 'app-front-page-slides',
-  imports: [DesmosHighlightComponent, DiscordHighlightComponent, DiscordColumnComponent, FontAwesomeModule],
+  imports: [DesmosHighlightComponent, DiscordHighlightComponent, DiscordColumnComponent, FontAwesomeModule, MiniCardComponent],
   templateUrl: './front-page-slides.component.html',
   styleUrl: './front-page-slides.component.css'
 })

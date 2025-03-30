@@ -1,43 +1,9 @@
-<div class="h-screen flex items-center justify-center relative">
-<!-- 
-    <div class="relative m-0 h-full overflow-hidden">
-        <div class="w-full m-auto bg-[#e4e4e4] dark:bg-[#282b30] duration-500 h-full">
-            <div class="lg:h-[140%] overflow-hidden flex flex-wrap w-full m-auto lg:rotate-[10deg] lg:translate-y-[-20vh]">
-                @if(innerWidth < 1024){
-                    <app-discord-column [scale]="1" [col_num]="1" [messages]="messages"></app-discord-column>
-                }
-                @else {
-                    <app-discord-column [scale]="1" [col_num]="3" [messages]="messages"></app-discord-column>
-                }
-            </div>
-        </div>
-    </div> -->
+<div class="h-screen w-screen flex items-center justify-center relative">
     <div class="w-3/4 h-3/4 overflow-hidden relative">
-        <div class="w-full h-full flex flex-nowrap duration-200 justify-center items-center absolute" #slides>
+        <div class="w-full h-full flex flex-nowrap duration-200 justify-center items-center absolute space-x-28" #slides>
             @for(slide of selectionSlidesArray; track $index){
-                <div class="w-1/2 h-[50vh] flex justify-center items-center mr-2">
-                    <div class="w-[60rem] h-full flex justify-center items-center border">{{slide}}</div>
-                </div>
+                <app-mini-card></app-mini-card>
             }
-
-            <!-- Desmos card -->
-            <!-- <div class="w-[70rem] h-[50vh] overflow-hidden">
-                <div class="w-full m-auto bg-[#e4e4e4] dark:bg-[#282b30] duration-500 h-full">
-                    <div class="lg:h-[200%] overflow-hidden flex flex-wrap w-full m-auto lg:rotate-[10deg] lg:translate-y-[-10vh]">
-                        @if(innerWidth < 1024){
-                            <app-discord-column [scale]="1" [col_num]="1" [messages]="messages"></app-discord-column>
-                        }
-                        @else {
-                            <app-discord-column [scale]="1" [col_num]="3" [messages]="messages"></app-discord-column>
-                        }
-                    </div>
-                </div>
-            </div> -->
-
-            <!-- Discord card -->
-            <!-- <div class="w-full h-[50vh] flex justify-center items-center">
-
-            </div> -->
         </div>
     </div>
 
