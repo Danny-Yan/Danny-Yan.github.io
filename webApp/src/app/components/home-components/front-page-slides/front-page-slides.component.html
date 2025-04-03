@@ -5,7 +5,7 @@
     <div class="w-3/4 h-5/6 relative overflow-x-hidden">
         <div #slides class="w-full h-full flex flex-nowrap duration-200 justify-center items-center absolute space-x-28 top-0 overflow-x-hidden">
             @for(slide of selectionSlidesArray; track $index){
-                <app-mini-card [title] = "slide.title" [imgUrl]="slide.icon" [link]="slide.link" [description]="slide.description"></app-mini-card>
+                <app-mini-card [title] = "slide.title" [imgUrl]="slide.icon" [link]="slide.link" [description]="slide.description" [languages]="slide?.languages ?? []"></app-mini-card>
             }
             <div #mini_box_ref>
                 <app-mini-project-redirect></app-mini-project-redirect>

@@ -1,3 +1,13 @@
-<div class="rounded-t-3xl bg-blue-200 border-4 border-blue-300 pt-[0.5rem] pb-[3rem] px-[1rem]">
-    <h1 class="text-white font-semibold">{{language}}</h1>
+<div class="relative w-[4rem] h-[10rem]">
+    <div class="absolute top-0 left-0 w-full h-full">
+        <div class="rotate-180 stretch">
+            <fa-icon [icon]="faBookmark" class="text-[5rem]"
+            [ngClass]="bgColor ? bgColor : 'text-blue-200'"></fa-icon>
+        </div>
+        <div></div>
+    </div>
+    <div class="absolute top-[45px] left-0 w-full h-full">
+        <h1 class="w-full h-full flex justify-center items-start font-semibold text-[1.5rem]"
+            [ngClass]="textColour ? textColour : 'text-black'">{{language}}</h1>
+    </div>
 </div>

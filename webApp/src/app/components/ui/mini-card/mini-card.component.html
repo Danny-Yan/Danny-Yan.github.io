@@ -1,16 +1,17 @@
 <div class="relative">
-    <div class="flex absolute top-[-35px] left-0 z-0">
-        <app-language-tag language="cpp"></app-language-tag>
-        <app-language-tag language="html"></app-language-tag>
+    <div class="flex absolute top-[-90px] left-[20px] z-0 space-x-16">
+        @for( language of languages; track $index){
+            <app-language-tag [language]="language"></app-language-tag>
+        }
     </div>
 
 
     <div class="z-50 w-[30rem] h-[40rem] flex flex-col justify-between items-center bg-white rounded-3xl shadow-lg p-4 relative">
-        <div class="flex flex-col items-start w-full h-full">
+        <div class="flex flex-col items-start">
             <h1 class="text-[2rem] font-bold">{{title}}</h1>
             <h1 class="text-[1.2rem] text-gray-500">{{description}}</h1>
-            <div class="h-full w-full flex justify-center items-center">
-                <img src="{{imgUrl}}" class="w-[90%] max-w-[50vw] max-h-[50vh] rounded-xl shadow-md" alt="{{title}}"/>
+            <div class="w-full max-h-[25rem] flex justify-center items-center p-5">
+                <img src="{{imgUrl}}" class="w-full h-full rounded-xl shadow-md object-cover" alt="{{title}}"/>
             </div>
         </div>
 

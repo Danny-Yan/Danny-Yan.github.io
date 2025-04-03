@@ -13,6 +13,5 @@ export class MiniCardComponent {
   @Input() description: string = '';
   @Input({required: true}) imgUrl: string = '';
   @Input({required: true}) link: string = '';
-  @Input() languages: {} = {};
-
+  @Input() languages: string[] = [];
 }

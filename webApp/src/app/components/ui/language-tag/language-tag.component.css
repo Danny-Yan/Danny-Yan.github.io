@@ -1,0 +1,11 @@
+.stretch{
+    -webkit-transform:scale(1.7,1); /* Safari and Chrome */
+    -moz-transform:scale(1.7,1); /* Firefox */
+    -ms-transform:scale(1.7,1); /* IE 9 */
+    -o-transform:scale(1.7,1); /* Opera */
+    transform:scale(1.7,1); /* W3C */
+}
+
+.verticalText{
+    writing-mode: sideways-lr;
+}
