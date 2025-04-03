@@ -12,7 +12,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 })
 export class ButtonLinkComponent {
   @Input({ required: true }) Name: string = '';
-  @Input() Link: string = '';
+  @Input() link: string = '';
   @Input() source: string = '';
   @Input({ required: true }) bg_classes: any = "";
 }

@@ -1,38 +1,49 @@
-import { Component, HostListener, ViewChild, ElementRef, OnInit} from '@angular/core';
-import { DesmosHighlightComponent } from '../../../web-pages/project-pages/desmos-highlight/desmos-highlight.component';
-import { DiscordHighlightComponent } from '../../../web-pages/project-pages/discord-highlight/discord-highlight.component';
-import { DiscordColumnComponent } from '../../discord-components/discord-column/discord-column.component';
+import { Component, HostListener, ViewChild, ElementRef, OnInit, Renderer2, AfterViewInit} from '@angular/core';
 import { AppSettingsService } from '../../../services/app-settings/app-settings.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faAngleRight, faAngleLeft} from '@fortawesome/free-solid-svg-icons'; 
 import { MiniCardComponent } from '../../ui/mini-card/mini-card.component';
+import { MiniProjectRedirectComponent } from '../../ui/mini-project-redirect/mini-project-redirect.component';
 
 @Component({
   selector: 'app-front-page-slides',
-  imports: [DesmosHighlightComponent, DiscordHighlightComponent, DiscordColumnComponent, FontAwesomeModule, MiniCardComponent],
+  imports: [FontAwesomeModule, MiniCardComponent, MiniProjectRedirectComponent],
   templateUrl: './front-page-slides.component.html',
   styleUrl: './front-page-slides.component.css'
 })
-export class FrontPageSlidesComponent implements OnInit {
+export class FrontPageSlidesComponent implements AfterViewInit {
     @ViewChild('slides') slides: ElementRef = new ElementRef(null);
+    @ViewChild('mini_box_ref') miniBoxRef: ElementRef = new ElementRef(null);
     
     faAngleLeft = faAngleLeft
     faAngleRight = faAngleRight
 
-    messages: Array<any> = [];
     innerWidth: number = 0;
     scrollAmount: number = 500;
 
-    selectionSlidesArray = ["discord", "desmos", "UI"];
+    selectionSlidesArray = 
+    [
+        {
+            title: "Desmos graphs",
+            description: "A collection of desmos graphs which I have made over the years",
+            icon: "/png/mini_view_cards/mini view desmos.png",
+            link: "/desmos"
+        },
+        {
+            title: "Voice recording discord bot",
+            description: "A small discord bot which records and writes down any words spoken in a voice channel",
+            icon: "/png/mini_view_cards/mini view discord.png",
+            link: "/discord"
+        }
+    ];
 
-    constructor( private appSettingsService: AppSettingsService) {}
+    constructor( private appSettingsService: AppSettingsService, private render: Renderer2) {}
 
-    ngOnInit(){
-        this.appSettingsService.getJSON("test_json.html").subscribe(data => {
-        this.messages = data;
-        });
+    ngAfterViewInit(){
+        console.log(this.slides.nativeElement)
+        console.log(this.slides.nativeElement.scrollLeft)
+        this.scrollAmount = this.miniBoxRef.nativeElement.getBoundingClientRect().x
         this.innerWidth = window.innerWidth;
-        console.log(this.slides.nativeElement);
     };
 
     @HostListener('window:resize', ['$event'])
@@ -44,9 +55,11 @@ export class FrontPageSlidesComponent implements OnInit {
         console.log(this.slides.nativeElement.scrollLeft - this.scrollAmount);
         // console.log(this.slides.nativeElement.scrollLeft);
         this.slides.nativeElement.scrollTo({ left: (this.slides.nativeElement.scrollLeft - this.scrollAmount), behavior: 'smooth' });
+        // this.slides.nativeElement.scrollLeft -= this.scrollAmount;
     }
 
     scrollRight(){
+        console.log(this.slides.nativeElement.scrollLeft);
         // console.log(this.slides.nativeElement.scrollLeft);
         this.slides.nativeElement.scrollTo({ left: (this.slides.nativeElement.scrollLeft + this.scrollAmount), behavior: 'smooth' });
     }

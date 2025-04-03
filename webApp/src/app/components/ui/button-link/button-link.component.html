@@ -1,10 +1,10 @@
 <div class = "z-20 text-center cursor-pointer [border-radius:_clamp(0.5rem,0.5vw,1rem)] duration-200 drop-shadow-lg"
     [ngClass]="bg_classes">
-    <p class="[font-size:_clamp(1.5rem,1vw,5rem)] font-bold">
-        @if(Link){
-            <a class="no-underline text-[#fff]" routerLink = "{{Link}}">{{Name}}</a>
+    <p class="[font-size:_clamp(1.5rem,1vw,5rem)] font-bold w-full h-full">
+        @if(link){
+            <a class="no-underline text-[#fff] w-full h-full" routerLink = "{{link}}">{{Name}}</a>
         }@else if(source){
-            <a class="no-underline text-[#fff]" href="{{source}}">{{Name}}</a>
+            <a class="no-underline text-[#fff] w-full h-full" href="{{source}}">{{Name}}</a>
         }
     </p>
 </div>

@@ -1,12 +1,19 @@
-
-<div class="w-[30rem] h-[40rem] flex flex-col justify-between items-center bg-white rounded-3xl shadow-lg p-4">
-    <div class="flex flex-col items-start w-full h-full">
-        <h1 class="text-[2rem] font-bold">TITLE</h1>
-        <h1 class="text-[1.2rem] text-gray-500">This is a small description</h1>
-        <div class="h-full w-full flex justify-center items-center">
-            <img src="/png/mini_view_cards/mini_view_discord.png" class="w-[90%] max-w-[50vw] h-auto rounded-xl" alt="discord bot"/>
-        </div>
+<div class="relative">
+    <div class="flex absolute top-[-35px] left-0 z-0">
+        <app-language-tag language="cpp"></app-language-tag>
+        <app-language-tag language="html"></app-language-tag>
     </div>
 
-    <app-button-link Name="Go to" [Link]="link" bg_classes="bg-orange-400 hover:bg-orange-600 [padding-block:_clamp(0.7rem,0.5vw,2rem)] w-full flex-nowrap" class="w-full"></app-button-link>
+
+    <div class="z-50 w-[30rem] h-[40rem] flex flex-col justify-between items-center bg-white rounded-3xl shadow-lg p-4 relative">
+        <div class="flex flex-col items-start w-full h-full">
+            <h1 class="text-[2rem] font-bold">{{title}}</h1>
+            <h1 class="text-[1.2rem] text-gray-500">{{description}}</h1>
+            <div class="h-full w-full flex justify-center items-center">
+                <img src="{{imgUrl}}" class="w-[90%] max-w-[50vw] max-h-[50vh] rounded-xl shadow-md" alt="{{title}}"/>
+            </div>
+        </div>
+
+        <app-button-link Name="Go to" [link]="link" bg_classes="bg-orange-400 hover:bg-orange-600 [padding-block:_clamp(0.7rem,0.5vw,2rem)] flex-nowrap" class="w-full"></app-button-link>
+    </div>
 </div>
