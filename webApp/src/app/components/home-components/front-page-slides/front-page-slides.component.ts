@@ -53,15 +53,14 @@ export class FrontPageSlidesComponent implements AfterViewInit {
     }
     
     scrollLeft(){
-        console.log(this.slides.nativeElement.scrollLeft - this.scrollAmount);
-        // console.log(this.slides.nativeElement.scrollLeft);
+        console.log("BEFORE LEFT:" + this.slides.nativeElement.scrollLeft);
         this.slides.nativeElement.scrollTo({ left: (this.slides.nativeElement.scrollLeft - this.scrollAmount), behavior: 'smooth' });
-        // this.slides.nativeElement.scrollLeft -= this.scrollAmount;
+        console.log("AFTER LEFT:" + this.slides.nativeElement.scrollLeft);
     }
 
     scrollRight(){
-        console.log(this.slides.nativeElement.scrollLeft);
-        // console.log(this.slides.nativeElement.scrollLeft);
+        console.log("BEFORE RIGHT:" + this.slides.nativeElement.scrollLeft);
         this.slides.nativeElement.scrollTo({ left: (this.slides.nativeElement.scrollLeft + this.scrollAmount), behavior: 'smooth' });
+        console.log("AFTER RIGHT:" + this.slides.nativeElement.scrollLeft);
     }
 }
