@@ -1,5 +1,4 @@
-import { Component, HostListener, ViewChild, ElementRef, OnInit, Renderer2, AfterViewInit} from '@angular/core';
-import { AppSettingsService } from '../../../services/app-settings/app-settings.service';
+import { Component, HostListener, ViewChild, ElementRef, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faAngleRight, faAngleLeft} from '@fortawesome/free-solid-svg-icons'; 
 import { MiniCardComponent } from '../../ui/mini-card/mini-card.component';
@@ -9,18 +8,16 @@ import { MiniProjectRedirectComponent } from '../../ui/mini-project-redirect/min
   selector: 'app-front-page-slides',
   imports: [FontAwesomeModule, MiniCardComponent, MiniProjectRedirectComponent],
   templateUrl: './front-page-slides.component.html',
-  styleUrl: './front-page-slides.component.css'
+  styleUrl: './front-page-slides.component.css',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class FrontPageSlidesComponent implements AfterViewInit {
-    @ViewChild('slides') slides: ElementRef = new ElementRef(null);
-    @ViewChild('mini_box_ref') miniBoxRef: ElementRef = new ElementRef(null);
+export class FrontPageSlidesComponent {
+    @ViewChild('swiperContainer') swiperContainer: any = new ElementRef(null);
     
     faAngleLeft = faAngleLeft
     faAngleRight = faAngleRight
 
     innerWidth: number = 0;
-    scrollAmount: number = 500;
-
     selectionSlidesArray = 
     [
         {
@@ -38,29 +35,16 @@ export class FrontPageSlidesComponent implements AfterViewInit {
         }
     ];
 
-    constructor( private appSettingsService: AppSettingsService, private render: Renderer2) {}
-
-    ngAfterViewInit(){
-        console.log(this.slides.nativeElement)
-        console.log(this.slides.nativeElement.scrollLeft)
-        this.scrollAmount = this.miniBoxRef.nativeElement.getBoundingClientRect().x
-        this.innerWidth = window.innerWidth;
-    };
-
     @HostListener('window:resize', ['$event'])
     onResize(event: any) {
         this.innerWidth = window.innerWidth;
     }
     
     scrollLeft(){
-        console.log("BEFORE LEFT:" + this.slides.nativeElement.scrollLeft);
-        this.slides.nativeElement.scrollTo({ left: (this.slides.nativeElement.scrollLeft - this.scrollAmount), behavior: 'smooth' });
-        console.log("AFTER LEFT:" + this.slides.nativeElement.scrollLeft);
+        this.swiperContainer.nativeElement.swiper.slidePrev();
     }
 
     scrollRight(){
-        console.log("BEFORE RIGHT:" + this.slides.nativeElement.scrollLeft);
-        this.slides.nativeElement.scrollTo({ left: (this.slides.nativeElement.scrollLeft + this.scrollAmount), behavior: 'smooth' });
-        console.log("AFTER RIGHT:" + this.slides.nativeElement.scrollLeft);
+        this.swiperContainer.nativeElement.swiper.slideNext();
     }
 }
