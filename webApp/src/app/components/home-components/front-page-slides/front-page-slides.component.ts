@@ -1,4 +1,4 @@
-import { Component, HostListener, ViewChild, ElementRef, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { Component, HostListener, ViewChild, ElementRef, CUSTOM_ELEMENTS_SCHEMA, AfterViewInit} from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faAngleRight, faAngleLeft} from '@fortawesome/free-solid-svg-icons'; 
 import { MiniCardComponent } from '../../ui/mini-card/mini-card.component';
@@ -11,13 +11,15 @@ import { MiniProjectRedirectComponent } from '../../ui/mini-project-redirect/min
   styleUrl: './front-page-slides.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class FrontPageSlidesComponent {
+export class FrontPageSlidesComponent implements AfterViewInit{
     @ViewChild('swiperContainer') swiperContainer: any = new ElementRef(null);
     
     faAngleLeft = faAngleLeft
     faAngleRight = faAngleRight
 
     innerWidth: number = 0;
+    slideNumber: number = 1;
+
     selectionSlidesArray = 
     [
         {
@@ -35,9 +37,20 @@ export class FrontPageSlidesComponent {
         }
     ];
 
+    ngAfterViewInit() {
+        this.resize();
+    }
+
     @HostListener('window:resize', ['$event'])
     onResize(event: any) {
+        this.resize();
+    }
+
+    resize(){
         this.innerWidth = window.innerWidth;
+        this.slideNumber = Math.ceil(this.innerWidth / 1400);
+        console.log(this.innerWidth);
+        console.log(this.slideNumber);
     }
     
     scrollLeft(){

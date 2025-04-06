@@ -3,7 +3,7 @@
         <h1 class="text-[4vw] font-bold">Projects I have made</h1>
     </div>
     <div class="w-3/4 h-full relative overflow-x-hidden">
-        <swiper-container #swiperContainer class="absolute top-0 left-0 w-full h-full" [slidesPerView]="1">
+        <swiper-container #swiperContainer class="absolute top-0 left-0 w-full h-full" [slidesPerView]="slideNumber" [centeredSlides] = "true">
             @for(slide of selectionSlidesArray; track $index){
                 <swiper-slide class="h-full w-full flex items-center justify-center">
                     <app-mini-card [title]="slide.title" [imgUrl]="slide.icon" [link]="slide.link" [description]="slide.description" [languages]="slide?.languages ?? []"></app-mini-card>
