@@ -71,7 +71,6 @@
           class="w-full p-2 border border-gray-200 rounded-md"
           placeholder="Message"
           required
-          minlength="20"
         ></textarea>
         <!-- input error message -->
         <p
@@ -91,6 +90,10 @@
           {{ alertMessage }}
         </p>
       </div>
+
+      <!-- Captcha -->
+      <h-captcha [attr.site-key]="'c7b512ee-adf0-48ce-87b7-f79bbc1c9366'"></h-captcha>
+
       <!-- submit button -->
       <button
         [disabled]="contactForm.invalid || onSubmit"

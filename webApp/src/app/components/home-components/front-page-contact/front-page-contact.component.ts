@@ -1,20 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MailService } from '../../../services/mail-service/mail.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowRotateForward } from '@fortawesome/free-solid-svg-icons'; 
 import { FormsModule, NgForm } from '@angular/forms';
 import { NgClass, NgIf } from '@angular/common';
+import '@hcaptcha/vanilla-hcaptcha';
 
 @Component({
   selector: 'app-front-page-contact',
   imports: [FontAwesomeModule, FormsModule, NgClass, NgIf],
   templateUrl: './front-page-contact.component.html',
-  styleUrl: './front-page-contact.component.css'
+  styleUrl: './front-page-contact.component.css',
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class FrontPageContactComponent {
 
-    constructor(
-        private mailService: MailService) {}
+    constructor(private mailService: MailService) {}
     
       private color: string = '';
       showAlert: boolean = false;
