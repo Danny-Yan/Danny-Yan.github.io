@@ -1,1 +1,109 @@
-<p>front-page-contact works!</p>
+<!-- <div class="w-screen h-screen flex flex-col items-center justify-center p-4 text-[1.5rem]">
+    <h1 class="text-[5vh]">Contact</h1>
+    <form action="https://api.web3forms.com/submit" method="POST"  class="w-full h-[80vh] flex flex-col items-start justify-center ml-[50vw] space-y-[3vh]">
+        <input type="hidden" name="access_key" value="c7b512ee-adf0-48ce-87b7-f79bbc1c9366">
+
+        <input type="text" name="name" placeholder="Your name" class="w-[50%] h-[5vh] py-[1.5rem] px-[2rem] border-none rounded-[1rem] bg-white" required>
+        <input type="email" name="email" placeholder="Your email" class="w-[50%] h-[5vh] py-[1.5rem] px-[2rem] border-none rounded-[1rem] bg-white" required>
+        <textarea name="message" placeholder = "A message .." rows="4" class="w-[50%] h-[20vh] py-[1.5rem] px-[2rem] border-none rounded-[1rem] bg-white" required></textarea>
+    
+        <div class="h-captcha" data-captcha="true"></div>
+        <button class="py-[1rem] px-[1.5rem] rounded-xl bg-[#2EC4B6] hover:bg-[#77e0d6] cursor-pointer" type="submit">Submit Form</button>
+    </form>
+</div> -->
+
+<!-- Form -->
+<div class="mt-8 h-screen w-screen flex flex-col items-center justify-center p-4 text-[1.5rem]">
+    <h1 class="text-[5vh]">Contact</h1>
+    <form
+      class="flex flex-col gap-3"
+      #contactForm="ngForm"
+      (ngSubmit)="submitEmail(contactForm)"
+    >
+      <!-- Name field -->
+      <div>
+        <input
+          name="name"
+          [(ngModel)]="contactFormValues.name"
+          #name="ngModel"
+          type="text"
+          placeholder="Full Name"
+          class="w-full p-2 border border-gray-200 rounded-md"
+          required
+          minlength="2"
+        />
+        <!-- input error message -->
+        <p
+          class="ml-1 text-red-400 text-sm"
+          *ngIf="name.errors && name.touched && name.dirty"
+        >
+          name is required
+        </p>
+      </div>
+      <!-- email field -->
+      <div>
+        <input
+          name="email"
+          [(ngModel)]="contactFormValues.email"
+          #email="ngModel"
+          type="email"
+          placeholder="Email"
+          class="w-full p-2 border border-gray-200 rounded-md"
+          required
+          pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+        />
+        <!-- input error message -->
+        <p
+          class="ml-1 text-red-400 text-sm"
+          *ngIf="email.errors && email.touched && email.dirty"
+        >
+          invalid email
+        </p>
+      </div>
+      <!-- body field -->
+      <div>
+        <textarea
+          name="body"
+          [(ngModel)]="contactFormValues.body"
+          #body="ngModel"
+          cols="30"
+          rows="10"
+          class="w-full p-2 border border-gray-200 rounded-md"
+          placeholder="Message"
+          required
+          minlength="20"
+        ></textarea>
+        <!-- input error message -->
+        <p
+          class="ml-1 text-red-400 text-sm"
+          *ngIf="body.errors && body.touched && body.dirty"
+        >
+          at least write some words (20 characters length)
+        </p>
+      </div>
+      <!-- Alert -->
+      <div
+        [ngClass]="{
+          hidden: !showAlert
+        }"
+      >
+        <p [ngClass]="alertColor" class="font-semibold">
+          {{ alertMessage }}
+        </p>
+      </div>
+      <!-- submit button -->
+      <button
+        [disabled]="contactForm.invalid || onSubmit"
+        class="p-2 rounded-xl font-bold uppercase text-white bg-[#2EC4B6] hover:bg-[#77e0d6] disabled:opacity-50 cursor-pointer"
+      >
+        <ng-container *ngIf="onSubmit === false; else submittingEmail">
+          send
+        </ng-container>
+        <ng-template #submittingEmail>
+          <div class="animate-spin">
+            <fa-icon [icon]="iconLoad"></fa-icon>
+          </div>
+        </ng-template>
+      </button>
+    </form>
+</div>

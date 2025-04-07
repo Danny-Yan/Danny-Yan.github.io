@@ -21,4 +21,10 @@ export class SidebarMenuComponent {
   hidemenu(){
     this.side_bar_val = "w-0";
   }
+
+
+  // NOT IMPLEMENTED
+  scroll(el: HTMLElement){
+    el.scrollIntoView({behavior: 'smooth'});
+  }
 }

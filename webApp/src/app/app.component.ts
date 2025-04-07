@@ -9,7 +9,7 @@ import { ThemeService } from './services/theme-service/theme.service';
   selector: 'app-root',
   imports: [ThemeToggleComponent, SidebarMenuComponent, RouterOutlet, NgIf, NgClass],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit{
   __URL:string = "";

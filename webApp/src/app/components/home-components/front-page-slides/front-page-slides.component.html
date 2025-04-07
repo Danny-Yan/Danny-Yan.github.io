@@ -2,15 +2,17 @@
     <div>
         <h1 class="text-[4vw] font-bold">Projects I have made</h1>
     </div>
-    <div class="w-3/4 h-5/6 relative overflow-x-hidden">
-        <div #slides class="w-full h-full flex flex-nowrap duration-200 justify-center items-center absolute space-x-28 top-0 overflow-x-hidden">
+    <div class="w-3/4 h-full relative overflow-x-hidden">
+        <swiper-container #swiperContainer class="absolute top-0 left-0 w-full h-full" [slidesPerView]="slideNumber" [centeredSlides] = "true">
             @for(slide of selectionSlidesArray; track $index){
-                <app-mini-card [title] = "slide.title" [imgUrl]="slide.icon" [link]="slide.link" [description]="slide.description" [languages]="slide?.languages ?? []"></app-mini-card>
+                <swiper-slide class="h-full w-full flex items-center justify-center">
+                    <app-mini-card [title]="slide.title" [imgUrl]="slide.icon" [link]="slide.link" [description]="slide.description" [languages]="slide?.languages ?? []"></app-mini-card>
+                </swiper-slide>
             }
-            <div #mini_box_ref>
+            <swiper-slide class="h-full w-full flex items-center justify-center">
                 <app-mini-project-redirect></app-mini-project-redirect>
-            </div>
-        </div>
+            </swiper-slide>
+        </swiper-container>
     </div>
 
     <!-- Left arrow -->
