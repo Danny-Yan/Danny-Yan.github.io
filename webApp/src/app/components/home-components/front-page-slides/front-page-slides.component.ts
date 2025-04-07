@@ -48,9 +48,9 @@ export class FrontPageSlidesComponent implements AfterViewInit{
 
     resize(){
         this.innerWidth = window.innerWidth;
+
+        // Calculate the number of slides that can fit in the viewport (Multiples of 1400px)
         this.slideNumber = Math.ceil(this.innerWidth / 1400);
-        console.log(this.innerWidth);
-        console.log(this.slideNumber);
     }
     
     scrollLeft(){
