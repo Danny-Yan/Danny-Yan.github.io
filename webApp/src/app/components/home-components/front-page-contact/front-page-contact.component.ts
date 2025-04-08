@@ -1,72 +1,81 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { MailService } from '../../../services/mail-service/mail.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faArrowRotateForward } from '@fortawesome/free-solid-svg-icons'; 
-import { FormsModule, NgForm } from '@angular/forms';
+import { faArrowRotateForward } from '@fortawesome/free-solid-svg-icons';
+import { FormsModule } from '@angular/forms';
 import { NgClass, NgIf } from '@angular/common';
-import '@hcaptcha/vanilla-hcaptcha';
+import { environment } from '../../../../environments/environment';
+import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
+import { RecaptchaModule } from "ng-recaptcha-2";
 
 @Component({
-  selector: 'app-front-page-contact',
-  imports: [FontAwesomeModule, FormsModule, NgClass, NgIf],
-  templateUrl: './front-page-contact.component.html',
-  styleUrl: './front-page-contact.component.css',
+    selector: 'app-front-page-contact',
+    imports: [FontAwesomeModule, FormsModule, NgClass, NgIf, RecaptchaModule],
+    templateUrl: './front-page-contact.component.html',
+    styleUrl: './front-page-contact.component.css',
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class FrontPageContactComponent {
+    constructor() { }
 
-    constructor(private mailService: MailService) {}
-    
-      private color: string = '';
-      showAlert: boolean = false;
-      alertMessage: string = '';
-      onSubmit: boolean = false;
-      iconLoad = faArrowRotateForward;
-      contactFormValues = {
+    color: string = '';
+    showAlert: boolean = false;
+    alertMessage: string = '';
+    onSubmit: boolean = false;
+    iconLoad = faArrowRotateForward;
+    emailJsServiceId = environment?.emailJsServiceId ?? '';
+    emailJsTemplateId = environment?.emailJsTemplateId ?? '';
+    emailJsPublicKey = environment?.emailJsPublicKey ?? '';
+    reCaptcha2SiteKey = environment?.reCaptcha2SiteKey ?? '';
+    captchaToken = '';
+    contactFormValues = {
         name: '',
         email: '',
         body: '',
-      };
+    };
 
-      get alertColor() {
+
+    reset(){
+        // this.color = '';
+        // this.showAlert = false;
+        // this.alertMessage = '';
+        // this.onSubmit = false;
+        // this.captchaToken = '';
+        // this.contactFormValues = {
+        //     name: '',
+        //     email: '',
+        //     body: '',
+        // };
+
+        location.reload();
+    }
+
+    get alertColor() {
         return `text-${this.color}-400`;
-      }
-      
-      hideAlert() {
-        setTimeout(() => {
-          this.showAlert = false;
-        }, 5000);
-      }
-      
-      async submitEmail(contactForm: NgForm) {
-        this.onSubmit = true;
-        // -- set formData values
-        let formData: FormData = new FormData();
-        formData.append('name', this.contactFormValues.name);
-        formData.append('email', this.contactFormValues.email);
-        formData.append('body', this.contactFormValues.body);
-        // -- email customization
-        formData.append('access_key', 'c7b512ee-adf0-48ce-87b7-f79bbc1c9366');
-        formData.append('subject', 'Email Support From Your Site');
-        formData.append('from_name', 'Contact Notification');
-      
-        try {
-          // -- send email
-          const res = await this.mailService.sendEmail(formData);
-          if (!res.ok) {
-            throw new Error();
-          }
-          this.alertMessage = 'Email sent successfully!';
-          this.color = 'green';
-          contactForm.reset();
-        } catch (err) {
-          // handle error
-          this.alertMessage = 'Something went wrong, try again later!';
-          this.color = 'red';
-        }
-        // -- reset submit and hide alert
-        this.onSubmit = false;
-        this.showAlert = true;
-        this.hideAlert();
-      }
+    }
+
+    // Send email function
+    sendEmail(e: Event) {
+        e.preventDefault();
+
+        emailjs.sendForm(environment.emailJsServiceId, environment.emailJsTemplateId, e.target as HTMLFormElement, {
+                publicKey: environment.emailJsPublicKey,
+            })
+            .then(
+                () => {
+                    console.log('SUCCESS!');
+                    this.reset();
+                },
+                (error) => {
+                    console.log('FAILED...', (error as EmailJSResponseStatus).text);
+                    this.reset();
+                },
+            );
+    }
+
+    // Resolve reCAPTCHA 
+    resolved(captchaResponse: any) {
+        console.log(`Resolved captcha with response: ${captchaResponse}`);
+    }
 }
+
+
