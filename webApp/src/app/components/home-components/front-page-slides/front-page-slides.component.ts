@@ -30,17 +30,17 @@ export class FrontPageSlidesComponent implements AfterViewInit{
             languages: ["cpp"]
         },
         {
-            title: "Desmos graphs",
-            description: "A collection of desmos graphs which I have made over the years",
-            icon: "/png/mini_view_cards/mini view desmos.png",
-            link: "/desmos",
-        },
-        {
             title: "Voice recording discord bot",
             description: "A small discord bot which records and writes down any words spoken in a voice channel",
             icon: "/png/mini_view_cards/mini view discord.png",
             link: "/discord",
             languages: ["python", "js"]
+        },
+        {
+            title: "Desmos graphs",
+            description: "A collection of desmos graphs which I have made over the years",
+            icon: "/png/mini_view_cards/mini view desmos.png",
+            link: "/desmos",
         },
     ];
 
