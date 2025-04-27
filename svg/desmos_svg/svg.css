@@ -1,0 +1,24 @@
+/* NEW SVG SETUP */
+/* Compress => https://www.iloveimg.com/compress-image/compress-svg */
+/* Place in public/svg/desmos_svg */
+/* Add <?xml-stylesheet type="text/css" href="svg.css" ?> */
+
+rect.btn {
+  stroke:#fff;
+  fill:#fff;
+  fill-opacity:0;
+  stroke-opacity:0;
+}
+
+.showpath{
+    animation: dash 10s ease-in-out forwards;
+}
+
+@keyframes dash{
+    50% {
+       stroke-dashoffset: 0;
+     }
+     100% {
+       stroke-dashoffset: 0;
+    }
+}
