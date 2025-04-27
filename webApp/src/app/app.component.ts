@@ -13,6 +13,7 @@ import { ThemeService } from './services/theme-service/theme.service';
 })
 export class AppComponent implements OnInit{
   __URL:string = "";
+  showThemeToggle: boolean = false;
   isDarkMode: boolean = false;
 
   constructor(private location: Location, private themeService: ThemeService, private router: Router) {}
@@ -20,6 +21,7 @@ export class AppComponent implements OnInit{
   ngOnInit(){    
     this.router.events.subscribe(event => {
         this.__URL = this.location.path();
+        this.showThemeToggle = this.__URL.includes('/projects');
     });
 
     this.themeService.modeChange.subscribe((darkmode) => {

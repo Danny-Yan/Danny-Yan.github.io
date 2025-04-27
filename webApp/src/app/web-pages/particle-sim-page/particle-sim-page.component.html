@@ -1,1 +1,24 @@
-<p>particle-sim-page works!</p>
+<section class="relative">
+    <vg-player (onPlayerReady)="onPlayerReady($event)" class="relative">
+        <vg-buffering></vg-buffering>
+        <video #myMedia 
+            [vgMedia]="$any(myMedia)" 
+            (canplay)="play()"
+            id="singleVideo" 
+            preload="auto" 
+            [muted]="'muted'"
+            playsinline autoplay loop>
+            <source src="./mp4/particle-sim-video.mp4" type="video/mp4">
+        </video>
+        <!-- <img src="/images/product/product-parent-hero.jpg" title="Your browser does not support the <video> tag"> -->
+    </vg-player>
+
+    <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+        <div class="text-center text-white flex flex-col">
+            <h1 class="text-[4rem] lg:text-[6rem] xl:text-[8rem] 2xl:text-[10rem] font-bold mb-4 text-wrap flex">Particle Simulation</h1>
+            <div class="w-full flex justify-center">
+                <app-button-link Name="github" bg_classes="bg-blue-300 hover:bg-gray-300 text-black px-4 py-2" source="https://github.com/Danny-Yan/Particle-fluid-simulation"></app-button-link>
+            </div>
+        </div>
+    </div>
+</section>

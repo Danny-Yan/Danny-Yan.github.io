@@ -4,11 +4,11 @@ import {VgControlsModule} from '@videogular/ngx-videogular/controls';
 import {VgOverlayPlayModule} from '@videogular/ngx-videogular/overlay-play';
 import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
 import { VgApiService } from '@videogular/ngx-videogular/core';
-import { SimpleArrowButtonComponent } from '../../../components/ui/simple-arrow-button/simple-arrow-button.component';
+import { ButtonLinkComponent } from '../../../components/ui/button-link/button-link.component';
 
 @Component({
   selector: 'app-particle-sim-highlight',
-  imports: [VgCoreModule, VgControlsModule, VgOverlayPlayModule, VgBufferingModule, SimpleArrowButtonComponent],
+  imports: [VgCoreModule, VgControlsModule, VgOverlayPlayModule, VgBufferingModule, ButtonLinkComponent],
   templateUrl: './particle-sim-highlight.component.html',
   styleUrl: './particle-sim-highlight.component.css'
 })
