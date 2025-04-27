@@ -2,9 +2,9 @@
     [ngClass]="bg_classes">
     <p class="[font-size:_clamp(1.5rem,1vw,5rem)] font-bold w-full h-full">
         @if(link){
-            <a class="no-underline text-[#fff] w-full h-full" routerLink = "{{link}}">{{Name}}</a>
+            <a class="no-underline w-full h-full" routerLink = "{{link}}">{{Name}}</a>
         }@else if(source){
-            <a class="no-underline text-[#fff] w-full h-full" href="{{source}}">{{Name}}</a>
+            <a class="no-underline w-full h-full" href="{{source}}">{{Name}}</a>
         }
     </p>
 </div>

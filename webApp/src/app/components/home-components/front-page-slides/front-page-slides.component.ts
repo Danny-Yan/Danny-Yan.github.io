@@ -23,6 +23,13 @@ export class FrontPageSlidesComponent implements AfterViewInit{
     selectionSlidesArray = 
     [
         {
+            title: "Fluid particle simulation",
+            description: "A particle based fluid simulation that models how particles move in a container",
+            icon: "/png/mini_view_cards/mini view particle.png",
+            link: "/particle-simulation",
+            languages: ["cpp"]
+        },
+        {
             title: "Desmos graphs",
             description: "A collection of desmos graphs which I have made over the years",
             icon: "/png/mini_view_cards/mini view desmos.png",
@@ -34,7 +41,7 @@ export class FrontPageSlidesComponent implements AfterViewInit{
             icon: "/png/mini_view_cards/mini view discord.png",
             link: "/discord",
             languages: ["python", "js"]
-        }
+        },
     ];
 
     ngAfterViewInit() {

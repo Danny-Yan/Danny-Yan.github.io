@@ -5,6 +5,7 @@ import { ProjectPageComponent } from './web-pages/project-pages/project-page/pro
 import { AboutPageComponent } from './web-pages/about-page/about-page.component';
 import { DiscordPageComponent } from './web-pages/discord-page/discord-page.component';
 import { DesmosPageComponent } from './web-pages/desmos-page/desmos-page.component';
+import { ParticleSimPageComponent } from './web-pages/particle-sim-page/particle-sim-page.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent},
@@ -12,5 +13,6 @@ export const routes: Routes = [
     { path: 'about', component: AboutPageComponent},
     { path: 'discord', component: DiscordPageComponent},
     { path: 'desmos', component: DesmosPageComponent},
+    { path: 'particle-simulation', component: ParticleSimPageComponent},
     { path: '**', component: PagenotfoundComponent},
 ];

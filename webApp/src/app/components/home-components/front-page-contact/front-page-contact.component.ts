@@ -67,7 +67,6 @@ export class FrontPageContactComponent {
                 },
                 (error) => {
                     console.log('FAILED...', (error as EmailJSResponseStatus).text);
-                    this.reset();
                 },
             );
     }

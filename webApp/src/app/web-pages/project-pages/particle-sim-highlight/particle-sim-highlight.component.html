@@ -1,1 +1,30 @@
-<p>particle-sim-highlight works!</p>
+<section class="relative">
+    <vg-player (onPlayerReady)="onPlayerReady($event)" class="relative">
+        <vg-buffering></vg-buffering>
+        <video #myMedia 
+            [vgMedia]="$any(myMedia)" 
+            (canplay)="play()"
+            id="singleVideo" 
+            preload="auto" 
+            [muted]="'muted'"
+            playsinline autoplay loop>
+            <source src="./mp4/particle-sim-video.mp4" type="video/mp4">
+        </video>
+        <!-- <img src="/images/product/product-parent-hero.jpg" title="Your browser does not support the <video> tag"> -->
+    </vg-player>
+
+    <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+        <div class="text-center text-white flex flex-col">
+            <h1 class="text-[4rem] lg:text-[6rem] xl:text-[8rem] 2xl:text-[10rem] font-bold mb-4 text-wrap flex">Particle Simulation</h1>
+            <!-- <div class="w-full flex justify-center">
+                <app-button-link link="/particle-simulation" bg_classes="bg-white text-black px-2 py-3 rounded-full" Name="Checkout"></app-button-link>
+            </div> -->
+
+            <!-- ADD BUTTON WHICH FOLLOWS CURSOR FOR THE BOTTOM HALF OF THE SCREEN -->
+
+            <div>
+                <app-simple-arrow-button link="/particle-simulation" bg_classes="bg-white text-black px-2 py-3 rounded-full"></app-simple-arrow-button>
+            </div>
+        </div>
+    </div>
+</section>
