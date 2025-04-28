@@ -29,7 +29,7 @@ export class DesmosDisplayVersion2Component implements AfterViewInit {
     this.bgDom.nativeElement.classList.remove('hidden');
   };
   close() {
-    this.displayDom.nativeElement.style.top = "-100%";
+    this.displayDom.nativeElement.style.top = "-1000%";
     this.displayDom.nativeElement.classList.remove('no-doc-scroll');
     this.bgDom.nativeElement.classList.add('hidden');
     this.bgDom.nativeElement.style.opacity = '0%';
