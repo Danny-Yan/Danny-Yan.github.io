@@ -57,8 +57,8 @@ export class FrontPageContactComponent {
     sendEmail(e: Event) {
         e.preventDefault();
 
-        emailjs.sendForm(environment.emailJsServiceId, environment.emailJsTemplateId, e.target as HTMLFormElement, {
-                publicKey: environment.emailJsPublicKey,
+        emailjs.sendForm(this.emailJsServiceId, this.emailJsTemplateId, e.target as HTMLFormElement, {
+                publicKey: this.emailJsPublicKey,
             })
             .then(
                 () => {
