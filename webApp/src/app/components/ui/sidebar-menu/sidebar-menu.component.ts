@@ -1,6 +1,5 @@
 import { Component, HostListener, ViewChild, ElementRef } from '@angular/core';
 import {NgClass} from "@angular/common";
-import { RouterLink } from '@angular/router';
 import { faXmark, faBars } from '@fortawesome/free-solid-svg-icons'; 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SidebarLinkComponent } from '../sidebar-link/sidebar-link.component';

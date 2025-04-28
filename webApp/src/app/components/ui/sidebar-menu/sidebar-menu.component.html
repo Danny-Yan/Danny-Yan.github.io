@@ -1,9 +1,9 @@
-<div class="flex whitespace-nowrap z-0">
-    <div #menuSidebarIcon>
-        <fa-icon #menuSidebarIcon [icon]="faBars" class = "p-[10px] text-[40px] cursor-pointer text-black fixed top-0 left-0 dark:text-white hover:text-[#FF9F1C]" (click)="showmenu()"></fa-icon>    
+<div class="h-10 relative">
+    <div #menuSidebarIcon class="flex relative">
+        <fa-icon #menuSidebarIcon [icon]="faBars" class = "flex p-[10px] text-[40px] cursor-pointer text-black fixed top-0 left-0 dark:text-white hover:text-[#FF9F1C]" (click)="showmenu()"></fa-icon>    
     </div>
 
-    <div #sidebar class = "flex flex-col relative h-screen duration-200 w-40 bg-white" [ngClass]="[side_bar_val]">
+    <div #sidebar class = "z-0 flex flex-col relative h-screen duration-200 w-40 bg-white" [ngClass]="[side_bar_val]">
         <fa-icon [icon]="faXmark" class="p-[10px] text-[40px] cursor-pointer text-black hover:text-[#FF9F1C] pr-28" (click)="hidemenu()"></fa-icon>
         <ul class="flex flex-col justify-between w-full">
             <app-sidebar-link link="/" text="HOME"></app-sidebar-link>
