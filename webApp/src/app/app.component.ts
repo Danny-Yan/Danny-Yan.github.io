@@ -21,7 +21,9 @@ export class AppComponent implements OnInit{
   ngOnInit(){    
     this.router.events.subscribe(event => {
         this.__URL = this.location.path();
-        this.showThemeToggle = this.__URL.includes('/projects');
+        this.showThemeToggle = this.__URL.includes('/projects') || 
+                                this.__URL.includes('/desmos') || 
+                                this.__URL.includes('/discord');
     });
 
     this.themeService.modeChange.subscribe((darkmode) => {
