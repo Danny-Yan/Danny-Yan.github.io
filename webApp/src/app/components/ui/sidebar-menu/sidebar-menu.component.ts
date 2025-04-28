@@ -3,17 +3,18 @@ import {NgClass} from "@angular/common";
 import { RouterLink } from '@angular/router';
 import { faXmark, faBars } from '@fortawesome/free-solid-svg-icons'; 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SidebarLinkComponent } from '../sidebar-link/sidebar-link.component';
 
 @Component({
   selector: 'app-sidebar-menu',
-  imports: [NgClass, FontAwesomeModule, RouterLink],
+  imports: [NgClass, FontAwesomeModule, SidebarLinkComponent],
   templateUrl: './sidebar-menu.component.html',
   styleUrl: './sidebar-menu.component.css'
 })
 export class SidebarMenuComponent {
     faXmark = faXmark
     faBars = faBars
-    side_bar_val = "w-0" 
+    side_bar_val = "left-[-100%]" 
     @ViewChild('menuSidebarIcon') menuIcon: ElementRef = new ElementRef(null);
     @ViewChild('sidebar') sidebar: ElementRef = new ElementRef(null);
 
@@ -28,9 +29,9 @@ export class SidebarMenuComponent {
     }
 
     showmenu(){
-        this.side_bar_val = "w-40";
+        this.side_bar_val = "left-0";
     }
     hidemenu(){
-        this.side_bar_val = "w-0";
+        this.side_bar_val = "left-[-100%]";
     }
 }
